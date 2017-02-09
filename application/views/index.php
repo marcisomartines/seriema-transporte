@@ -9,8 +9,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Seriema encomendas - SISTUR</title>
 
- <link href="<?=base_url()?>css/bootstrap.css" rel="stylesheet">
- <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -34,34 +42,87 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </nav>
-<br>
-<br>
 
+
+<br>
+<br>
+<br>
 <div id="main" class="container-fluid">
+
     <div id="top" class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <h2>Encomendas</h2>
         </div>
 
-<!--        <div class="col-md-6">-->
-<!--            <div class="input-group h2">-->
-<!--                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Encomenda">-->
-<!--                <span class="input-group-btn">-->
-<!--                <button class="btn btn-primary" type="submit">-->
-<!--                    <span class="glyphicon glyphicon-search"></span>-->
-<!--                </button>-->
-<!--            </span>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="col-md-2">
+<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
+            <a href="#" class="btn btn-default">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-folder-open fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Relatorios</p>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-        <div class="col-md-3">
-            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>
+        <div class="col-md-2">
+<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
+            <a href="#" class="btn btn-default">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-user fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Ver Todos</p>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="col-md-3">
-            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Buscar Encomenda<br></a>
+
+        <div class="col-md-2">
+<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
+            <a href="#" class="btn btn-default">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-user fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Ver Todos</p>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="col-md-3">
-            <a href="<?=base_url()?>index.php/Inicio/adicionarEncomenda" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Nova Encomenda<br></a>
+
+        <div class="col-md-2">
+<!--            <a   href="#" data-toggle="modal" data-target="#buscarModal-modal" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Buscar Encomenda<br></a>-->
+            <a href="#" data-toggle="modal" data-target="#buscarModal-modal" data-toggle="modal" data-target="#buscarModal-modal" class="btn btn-primary">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-search fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Buscar Volume</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-2">
+<!--            <a href="--><?//=base_url()?><!--index.php/Inicio/adicionarEncomenda" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Nova Encomenda<br></a>-->
+<!--            <a class="btn btn-success btn-lg btn-block btn-huge pull-right h2"  href="#" data-toggle="modal" data-target="#inserirModal-modal">Nova Encomenda<br></a>-->
+            <a href="#" data-toggle="modal" data-target="#inserirModal-modal" class="btn btn-success">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-cubes fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Novo Volume</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div> <!-- /#top -->
     <div id="list" class="row">
@@ -89,7 +150,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -102,21 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>5014</td>
-                    <td>São Paulo - SP</td>
-                    <td>Campo Grande - MS</td>
-                    <td>07/02/2017</td>
-                    <td>Marciso Gonzalez Martines</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -130,7 +177,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -144,7 +191,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -158,7 +205,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -172,7 +219,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>5014</td>
+                    <td>São Paulo - SP</td>
+                    <td>Campo Grande - MS</td>
+                    <td>07/02/2017</td>
+                    <td>Marciso Gonzalez Martines</td>
+                    <td class="actions">
+                        <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -185,7 +246,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td class="actions">
                         <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
                     </td>
                 </tr>
 
@@ -197,30 +258,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div> <!-- /#list -->
 
-<!--    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>-->
+<!--    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>-->
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="modalLabel">Excluir Encomenda</h4>
-            </div>
-            <div class="modal-body">
-                Deseja realmente excluir esta encomenda?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Sim</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-            </div>
-        </div>
-    </div>
-</div> <!-- /.modal -->
+<?php
+include 'modal/modal_excluirVolume.php';
+include 'modal/modal_inserirVolume.php';
+include 'modal/modal_buscarVolume.php';
+?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="<?=base_url()?>js/jquery.min.js"></script>
- <script src="<?=base_url()?>js/bootstrap.min.js"></script>
+<!-- <script src="--><?//=base_url()?><!--js/jquery.min.js"></script>-->
+ <script src="<?=base_url()?>js/bootstrap.js"></script>
 </body>
 </html>

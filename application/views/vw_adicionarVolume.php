@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <br>
 
 <div id="main" class="container-fluid">
-    <h3 class="page-header">Adicionar Item</h3>
+    <h3 class="page-header">Adicionar Volume</h3>
 
     <form action="index.html">
         <!-- area de campos do form -->
@@ -54,6 +54,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="form-group col-md-4">
                         <label for="campo1">Cliente</label>
                         <input type="text" class="form-control" id="campo1">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="campo2">Telefone</label>
+                        <input type="text" class="form-control" id="campo3">
                     </div>
 
                     <div class="form-group col-md-4">
