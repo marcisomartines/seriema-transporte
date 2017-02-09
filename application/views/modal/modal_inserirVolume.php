@@ -7,7 +7,7 @@
  */
 ?>
 <div class="modal fade" id="inserirModal-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
@@ -26,12 +26,12 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="campo2">Possui Nota Fiscal?</label>
+                        <label for="campo2">Nota Fiscal?</label>
                         <label>
                             <input type="checkbox" value=""> SIM
                         </label>
-                        <span style="display: none;">
-                            <input type="text" class="form-control" id="campo3">
+                        <span>
+                            <input type="text" class="form-control" id="campo3" disabled>
                         </span>
 
                     </div>
@@ -76,8 +76,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="alert('teste')">Salvar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="alert('teste')"><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
             </div>
         </div>
     </div>

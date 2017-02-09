@@ -50,53 +50,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="main" class="container-fluid">
 
     <div id="top" class="row">
-        <div class="col-md-2">
-            <h2>Encomendas</h2>
-        </div>
 
-        <div class="col-md-2">
-<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-default">
+        <div class="col-md-12 pull-right">
+            <!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
+            <a href="#" class="btn btn-primary">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <i class="fa fa-folder-open fa-5x"></i>
+                        <i class="fa fa-file-text-o fa-5x"></i>
                     </div>
                     <div class="col-xs-12 text-center">
                         <p>Relatorios</p>
                     </div>
                 </div>
             </a>
-        </div>
 
-        <div class="col-md-2">
+
+
+<!--        </div>-->
+
+<!--        <div class="col-md-1">-->
 <!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-default">
+            <a href="#" class="btn btn-primary">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <i class="fa fa-user fa-5x"></i>
+                        <i class="fa fa-arrow-down fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Recebidos</p>
+                    </div>
+                </div>
+            </a>
+<!--        </div>-->
+
+<!--        <div class="col-md-1">-->
+<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
+            <a href="#" class="btn btn-primary">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-arrow-up fa-5x"></i>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <p>Enviados</p>
+                    </div>
+                </div>
+            </a>
+<!--        </div>-->
+
+<!--        <div class="col-md-1">-->
+<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
+            <a href="#" class="btn btn-primary">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <i class="fa fa-eye fa-5x"></i>
                     </div>
                     <div class="col-xs-12 text-center">
                         <p>Ver Todos</p>
                     </div>
                 </div>
             </a>
-        </div>
+<!--        </div>-->
 
-        <div class="col-md-2">
-<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-default">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-user fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Ver Todos</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-md-2">
+<!--        <div class="col-md-1">-->
 <!--            <a   href="#" data-toggle="modal" data-target="#buscarModal-modal" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Buscar Encomenda<br></a>-->
             <a href="#" data-toggle="modal" data-target="#buscarModal-modal" data-toggle="modal" data-target="#buscarModal-modal" class="btn btn-primary">
                 <div class="row">
@@ -108,12 +122,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </a>
-        </div>
+<!--        </div>-->
 
-        <div class="col-md-2">
+<!--        <div class="col-md-1">-->
 <!--            <a href="--><?//=base_url()?><!--index.php/Inicio/adicionarEncomenda" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Nova Encomenda<br></a>-->
 <!--            <a class="btn btn-success btn-lg btn-block btn-huge pull-right h2"  href="#" data-toggle="modal" data-target="#inserirModal-modal">Nova Encomenda<br></a>-->
-            <a href="#" data-toggle="modal" data-target="#inserirModal-modal" class="btn btn-success">
+            <a href="#" data-toggle="modal" data-target="#inserirModal-modal" class="btn btn-primary">
                 <div class="row">
                     <div class="col-xs-12 text-center">
                         <i class="fa fa-cubes fa-5x"></i>
@@ -125,6 +139,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
         </div>
     </div> <!-- /#top -->
+
     <div id="list" class="row">
 
         <div class="table-responsive col-md-12">
