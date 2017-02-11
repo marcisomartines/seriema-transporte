@@ -17,44 +17,44 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="campo1">Cliente</label>
-                        <input type="text" class="form-control" id="campo1">
+                        <input type="text" class="form-control" id="cliente">
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="campo2">Telefone</label>
-                        <input type="text" class="form-control" id="campo3">
+                        <input type="text" class="form-control" id="telefone">
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="campo2">Nota Fiscal?</label>
                         <label>
-                            <input type="checkbox" value=""> SIM
+                            <input type="checkbox" id="nota" value="1"> SIM
                         </label>
                         <span>
-                            <input type="text" class="form-control" id="campo3" disabled>
+                            <input type="text" class="form-control" id="notaFiscal" value="S/N" disabled>
                         </span>
 
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="campo3">Descrição</label>
-                        <input type="text" class="form-control" id="campo3">
+                        <input type="text" class="form-control" id="desc">
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="campo2">Tipo da Volume</label>
                         <div class="radio">
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Caixa
+                                <input type="radio" name="tipoVolume" id="tipoVolume" value="1" checked> Caixa
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Sacola
+                                <input type="radio" name="tipoVolume" id="tipoVolume" value="2"> Sacola
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Envelope
+                                <input type="radio" name="tipoVolume" id="tipoVolume" value="3"> Envelope
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Avulso
+                                <input type="radio" name="tipoVolume" id="tipoVolume" value="4"> Avulso
                             </label>
                         </div>
                     </div>
@@ -63,21 +63,21 @@
                         <label for="campo2">Tamanho do Volume</label>
                         <div class="radio">
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Pequena
+                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume" value="1" checked> Pequena
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Média
+                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume" value="2"> Média
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Grande
+                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume" value="3"> Grande
                             </label>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="alert('teste')"><i class="fa fa-check"></i> Salvar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
+                <button type="button" class="btn btn-success" id="salvarVolume"><i class="fa fa-check"></i> Salvar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelarVolume"><i class="fa fa-close"></i> Cancelar</button>
             </div>
         </div>
     </div>
