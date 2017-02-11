@@ -35,8 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Início</a></li>
-                <li><a href="#">Opções</a></li>
+                <li><a href="#">Relatorios</a></li>
                 <li><a href="#">Perfil</a></li>
+                <li><a href="#">aaaa</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>
         </div>
@@ -49,96 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <br>
 <div id="main" class="container-fluid">
 
-    <div id="top" class="row">
-
-        <div class="col-md-12 pull-right">
-            <!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-primary">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-file-text-o fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Relatorios</p>
-                    </div>
-                </div>
-            </a>
-
-
-
-<!--        </div>-->
-
-<!--        <div class="col-md-1">-->
-<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-primary">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-arrow-down fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Recebidos</p>
-                    </div>
-                </div>
-            </a>
-<!--        </div>-->
-
-<!--        <div class="col-md-1">-->
-<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-primary">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-arrow-up fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Enviados</p>
-                    </div>
-                </div>
-            </a>
-<!--        </div>-->
-
-<!--        <div class="col-md-1">-->
-<!--            <a href="add.html" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Ver Todos<br></a>-->
-            <a href="#" class="btn btn-primary">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-eye fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Ver Todos</p>
-                    </div>
-                </div>
-            </a>
-<!--        </div>-->
-
-<!--        <div class="col-md-1">-->
-<!--            <a   href="#" data-toggle="modal" data-target="#buscarModal-modal" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Buscar Encomenda<br></a>-->
-            <a href="#" data-toggle="modal" data-target="#buscarModal-modal" data-toggle="modal" data-target="#buscarModal-modal" class="btn btn-primary">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-search fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Buscar Volume</p>
-                    </div>
-                </div>
-            </a>
-<!--        </div>-->
-
-<!--        <div class="col-md-1">-->
-<!--            <a href="--><?//=base_url()?><!--index.php/Inicio/adicionarEncomenda" class="btn btn-primary btn-lg btn-block btn-huge pull-right h2">Nova Encomenda<br></a>-->
-<!--            <a class="btn btn-success btn-lg btn-block btn-huge pull-right h2"  href="#" data-toggle="modal" data-target="#inserirModal-modal">Nova Encomenda<br></a>-->
-            <a href="#" data-toggle="modal" data-target="#inserirModal-modal" class="btn btn-primary">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <i class="fa fa-cubes fa-5x"></i>
-                    </div>
-                    <div class="col-xs-12 text-center">
-                        <p>Novo Volume</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div> <!-- /#top -->
+     <!-- /#top -->
+    <?=$this->botoes->gerar();?>
+     <!-- /#top -->
 
     <div id="list" class="row">
 

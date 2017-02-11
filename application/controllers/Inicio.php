@@ -5,6 +5,7 @@ class Inicio extends CI_Controller {
 
 	public function index()
 	{
+        $this->load->library('Botoes');
 		$this->load->view('index');
 	}
 
