@@ -10,8 +10,20 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" onclick="limpaVolumeModel();">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="modalLabel">Cadastrar Volume</h4>
+            </div>
+
+            <div class="alert alert-success alert-dismissible" role="alert" style="display: none;" id="volumeSucesso">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><i class="fa fa-check"></i> Volume cadastrado com sucesso!</strong>
+            </div>
+
+            <div class="alert alert-danger alert-dismissible" role="alert" style="display: none;" id="volumeErro">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><i class="fa fa-close"></i> Erro ao cadastrar volume!</strong>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -42,19 +54,19 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label for="campo2">Tipo da Volume</label>
+                        <label for="campo2">Tipo do Volume</label>
                         <div class="radio">
                             <label class="radio-inline">
-                                <input type="radio" name="tipoVolume" id="tipoVolume" value="1" checked> Caixa
+                                <input type="radio" name="tipoVolume" id="tipoVolume1" value="1" checked> Caixa
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="tipoVolume" id="tipoVolume" value="2"> Sacola
+                                <input type="radio" name="tipoVolume" id="tipoVolume2" value="2"> Sacola
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="tipoVolume" id="tipoVolume" value="3"> Envelope
+                                <input type="radio" name="tipoVolume" id="tipoVolume3" value="3"> Envelope
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="tipoVolume" id="tipoVolume" value="4"> Avulso
+                                <input type="radio" name="tipoVolume" id="tipoVolume4" value="4"> Avulso
                             </label>
                         </div>
                     </div>
@@ -63,13 +75,13 @@
                         <label for="campo2">Tamanho do Volume</label>
                         <div class="radio">
                             <label class="radio-inline">
-                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume" value="1" checked> Pequena
+                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume1" value="1" checked> Pequena
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume" value="2"> Média
+                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume2" value="2"> Média
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume" value="3"> Grande
+                                <input type="radio" name="tamanhoVolume" id="tamanhoVolume3" value="3"> Grande
                             </label>
                         </div>
                     </div>
