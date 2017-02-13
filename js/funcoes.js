@@ -13,6 +13,23 @@ $('#nota').click(function(){
     }
 });
 
+$('#course').change(function(){
+    console.log($('#course').val());
+    $.ajax({
+        url: 'index.php/Cliente/buscaCliente',
+        type: 'POST',
+        data:{
+            nome: $('#course').val()
+        },
+        success : function (data) {
+            var array = JSON.parse("[" + data + "]");
+
+            $('#cliente').val(array[0][0]['id_clients']);
+            $('#telefone').val(array[0][0]['telefone']);
+        }
+    });
+});
+
 
 $("#salvarVolume").click(function(){
     var dados = {
@@ -31,6 +48,7 @@ $("#salvarVolume").click(function(){
         success: function(data){
             limpaVolumeModel();
             $("#volumeSucesso").show();
+
             setTimeout(function(){
                 $('#inserirModal-modal').modal('toggle');
                 $("#volumeSucesso").hide();
@@ -41,8 +59,6 @@ $("#salvarVolume").click(function(){
         }
     });
 
-
-
 });
 
 $("#cancelarVolume").click(function(){
@@ -51,6 +67,7 @@ $("#cancelarVolume").click(function(){
 
 function limpaVolumeModel(){
     $('#cliente').val('');
+    $('#course').val('');
     $('#telefone').val('');
     $('#notaFiscal').val('S/N');
     $('#desc').val('');

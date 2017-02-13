@@ -29,7 +29,15 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="campo1">Cliente</label>
-                        <input type="text" class="form-control" id="cliente">
+<!--                        <input type="text" class="form-control" id="cliente">-->
+                        <?php
+                        $query = $this->db->get('tb_clients');
+                        $cliente[] = '';
+                        foreach ($query->result() as $clt) {
+                            $cliente[$clt->id_clients] = $clt->nome;
+                        }
+                        include 'ajaxCliente.php';
+                        ?>
                     </div>
 
                     <div class="form-group col-md-4">
