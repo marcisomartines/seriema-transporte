@@ -11,6 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Volume extends CI_Controller
 {
+    public function index(){
+        $this->load->view('vw_volume');
+    }
+
     public function cadastrarVolume(){
         $this->load->model('md_volume');
         $this->md_volume->salvarVolume();
