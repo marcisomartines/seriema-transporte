@@ -14,8 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Seriema encomendas - SISTUR</title>
-
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -60,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <thead>
                 <tr>
                     <th>Cliente</th>
-                    <th>Volume</th>
+                    <th>Descrição</th>
                     <th>Tipo</th>
                     <th>Tamanho</th>
                     <th>Data - Entrada</th>
@@ -68,22 +66,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <th class="actions">Ações</th>
                 </tr>
                 </thead>
+
                 <tbody>
-
-                <tr>
-                    <td>Marciso Gonzalez Martines</td>
-                    <td>Caixa de compras</td>
-                    <td>Caixa</td>
-                    <td>pequena</td>
-                    <td>27/01/2017</td>
-                    <td>Depósito</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-xs" href="#" data-toggle="modal" data-target="#despacharVolumeModal-modal"><i class="fa fa-reply-all"></i> Despachar</a>
-                        <a class="btn btn-warning btn-xs" href="#" data-toggle="modal" data-target="#editarVolumeModal-modal"><i class="fa fa-pencil"></i> Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluiVolumerModal-modal"><i class="fa fa-close"></i> Excluir</a>
-                    </td>
-                </tr>
-
+                <?=$this->mercadoria->listar();?>
                 </tbody>
             </table>
 
