@@ -15,9 +15,9 @@ class Mercadoria
         $this->CI = &get_instance();
     }
 
-    public function listar(){
+    public function listarDeposito(){
         $this->CI->load->model('md_volume');
-        $resultado = $this->CI->md_volume->listarVolume();
+        $resultado = $this->CI->md_volume->listarVolumeDeposito();
         $html='';
 
         foreach($resultado as $res){
@@ -29,9 +29,9 @@ class Mercadoria
             $html .= "<td>".$res['dt_entrada']."</td>";
             $html .= "<td>".$res['status']."</td>";
             $html .= "<td class='actions'>";
-            $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharVolumeModal-modal'><i class='fa fa-reply-all'></i> Despachar</a>";
-            $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#editarVolumeModal-modal'><i class='fa fa-pencil'></i> Editar</a>";
-            $html .= "<a class='btn btn-danger btn-xs'  href='#' data-toggle='modal' data-target='#excluiVolumerModal-modal'><i class='fa fa-close'></i> Excluir</a>";
+            $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharModal-modal'><i class='fa fa-reply-all'></i> Despachar</a>";
+            $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal'><i class='fa fa-pencil'></i> Editar</a>";
+            $html .= "<a class='btn btn-danger btn-xs'  href='#' data-toggle='modal' data-target='#excluirModal-modal'><i class='fa fa-close'></i> Excluir</a>";
             $html .= "</td>";
             $html .= "<tr>";
         }

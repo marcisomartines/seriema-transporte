@@ -40,7 +40,7 @@ class md_volume extends CI_Model
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
     }
 
-    public function listarVolume(){
+    public function listarVolumeDeposito(){
         return $this->db->select("tb_mercadoria.id_mercadoria,
                                   tb_mercadoria.id_cliente,
                                   tb_mercadoria.nr_nota_fiscal,
@@ -66,6 +66,6 @@ class md_volume extends CI_Model
                                   tb_clients.nome")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
-            /*->where('status',1)*/->get()->result_array();
+            ->where('status',1)->get()->result_array();
     }
 } 

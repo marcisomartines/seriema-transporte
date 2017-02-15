@@ -20,7 +20,7 @@ class Volume extends CI_Controller
 //        $dados = array("volume" => $volume);
 //        $this->load->view('vw_volume',$dados);
         $this->load->library('Mercadoria');
-        $this->load->view('vw_volume');
+        $this->load->view('vw_deposito');
     }
 
     public function cadastrarVolume(){
