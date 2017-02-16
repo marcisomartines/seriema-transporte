@@ -76,3 +76,31 @@ function limpaVolumeModel(){
     $("#volumeSucesso").hide();
     $("#volumeErro").hide();
 }
+
+function limparDespachoModel(){
+    $('#onibus_despacho').val();
+    $('#dt_despacho').val();
+    $('#cliente_despacho').val();
+    $('#nota_fiscal_despacho').val();
+    $('#dt_entrada_despacho').val();
+    $('#descricao_despacho').val();
+    $('#tp_volume_despacho').val();
+    $('#tm_volume_despacho').val();
+    $("#despachoSucesso").hide();
+    $("#despachoErro").hide();
+}
+
+function limparBuscaModel(){
+    $('#cliente_busca').val('');
+    $('#data_busca').val('');
+    $('#onibus_busca').val('');
+    $('#origem_busca').val('');
+    $('#destino_busca').val('');
+    $('#tp_volume1_busca').prop('checked',false);
+    $('#tp_volume2_busca').prop('checked',false);
+    $('#tp_volume3_busca').prop('checked',false);
+    $('#tp_volume4_busca').prop('checked',false);
+    $('#tm_volume1_busca').prop('checked',false);
+    $('#tm_volume2_busca').prop('checked',false);
+    $('#tm_volume3_busca').prop('checked',false);
+}

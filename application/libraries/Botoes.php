@@ -76,13 +76,13 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-        $html .= " <a href='".base_url()."index.php/Volume'  class=\"btn btn-primary\">";
+        $html .= " <a href='".base_url()."index.php/Volume/deposito'  class=\"btn btn-primary\">";
         $html .= " <div class=\"row\">";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<i class=\"fa fa-cubes fa-5x\"></i>";
         $html .= "</div>";
         $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<p>Volumes</p>";
+        $html .= "<p>Depósito</p>";
         $html .= "</div>";
         $html .= "</div>";
         $html .= "</a>";

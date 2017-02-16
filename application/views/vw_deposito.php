@@ -1,14 +1,19 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: marciso
+ * Date: 06/02/2017
+ * Time: 21:54
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Seriema encomendas - SISTUR</title>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seriema encomendas - SISTUR</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -34,60 +39,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Início</a></li>
-                <li><a href="#">Relatorios</a></li>
+                <li><a href="#">Opções</a></li>
                 <li><a href="#">Perfil</a></li>
-                <li><a href="#">aaaa</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<br>
-<br>
-<br>
+
 <div id="main" class="container-fluid">
-     <!-- /#top -->
-    <?=$this->botoes->gerar();?>
-     <!-- /#top -->
+    <h4 class="pull-left" style="margin-top: 55px;" >Deposito - Listagem </h4>
+
     <div id="list" class="row"><!-- /#list -->
+
         <div class="table-responsive col-md-12">
+            <a href="#" class="btn btn-primary pull-right"><i class="fa fa-plus-circle"></i> Novo Volume </a>
             <table class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead>
                 <tr>
-                    <th>Onibus</th>
-                    <th>Origem</th>
-                    <th>Destino</th>
-                    <th>Chegada - Destino</th>
                     <th>Cliente</th>
+                    <th>Descrição</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Data - Entrada</th>
+                    <th>Situação</th>
                     <th class="actions">Ações</th>
                 </tr>
                 </thead>
+
                 <tbody>
-
-                    <tr>
-                        <td>5014</td>
-                        <td>São Paulo - SP</td>
-                        <td>Campo Grande - MS</td>
-                        <td>07/02/2017</td>
-                        <td>Marciso Gonzalez Martines</td>
-                        <td class="actions">
-                            <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                            <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                            <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
-                        </td>
-                    </tr>
-
+                <?=$this->mercadoria->listarDeposito();?>
                 </tbody>
             </table>
+
         </div>
     </div> <!-- /#list -->
 </div>
-
 <?php
+include 'modal/modal_despacharVolume.php';
 include 'modal/modal_excluirVolume.php';
 include 'modal/modal_inserirVolume.php';
 include 'modal/modal_buscarVolume.php';
 ?>
+
 <script src="<?=base_url()?>js/funcoes.js"></script>
 </body>
 </html>
