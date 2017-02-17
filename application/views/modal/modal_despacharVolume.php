@@ -9,6 +9,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="despacharModal-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <input type="hidden" id="tipoDespacho" value="1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

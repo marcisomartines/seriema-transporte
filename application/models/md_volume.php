@@ -13,7 +13,7 @@ class md_volume extends CI_Model
         $dados = [
             'id_cliente'     => $this->input->post('cliente'),
             'nr_nota_fiscal' => $this->input->post('notafiscal'),
-            'descricao'      => $this->input->post('desc'),
+            'descricao'      => strtoupper($this->input->post('desc')),
             'tp_volume'      => $this->input->post('tipoVolume'),
             'tm_volume'      => $this->input->post('tamanhoVolume'),
             'dt_entrada'     => date('Y-m-d'),

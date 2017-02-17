@@ -14,7 +14,7 @@ $('#nota').click(function(){
 });
 
 $('#course').change(function(){
-    console.log($('#course').val());
+
     $.ajax({
         url: 'index.php/Cliente/buscaCliente',
         type: 'POST',
@@ -32,32 +32,37 @@ $('#course').change(function(){
 
 
 $("#salvarVolume").click(function(){
-    var dados = {
-        cliente       : $('#cliente').val(),
-        telefone      : $('#telefone').val(),
-        notafiscal    : $('#notaFiscal').val(),
-        desc          : $('#desc').val(),
-        tipoVolume    : $('input:radio[name=tipoVolume]:checked').val(),
-        tamanhoVolume : $('input:radio[name=tamanhoVolume]:checked').val()
-    };
+    console.log($("#tipoVolume").val());
+    if($("#tipoVolume").val()==1) {
+        var dados = {
+            cliente: $('#cliente').val(),
+            telefone: $('#telefone').val(),
+            notafiscal: $('#notaFiscal').val(),
+            desc: $('#desc').val(),
+            tipoVolume: $('input:radio[name=tipoVolume]:checked').val(),
+            tamanhoVolume: $('input:radio[name=tamanhoVolume]:checked').val()
+        };
 
-    $.ajax({
-        url: 'index.php/Volume/cadastrarVolume',
-        type: 'POST',
-        data: dados,
-        success: function(data){
-            limpaVolumeModel();
-            $("#volumeSucesso").show();
+        $.ajax({
+            url: 'index.php/Volume/cadastrarVolume',
+            type: 'POST',
+            data: dados,
+            success: function (data) {
+                limpaVolumeModel();
+                $("#volumeSucesso").show();
 
-            setTimeout(function(){
-                $('#inserirModal-modal').modal('toggle');
-                $("#volumeSucesso").hide();
-            }, 800);
-        },
-        error: function(data){
-            $("#volumeErro").show();
-        }
-    });
+                setTimeout(function () {
+                    $('#inserirModal-modal').modal('toggle');
+                    $("#volumeSucesso").hide();
+                }, 800);
+            },
+            error: function (data) {
+                $("#volumeErro").show();
+            }
+        });
+    }else{//Editando
+
+    }
 
 });
 

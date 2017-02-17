@@ -49,7 +49,7 @@ class Botoes
         $html .= "<i class=\"fa fa-arrow-up fa-5x\"></i>";
         $html .= "</div>";
         $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<p>Enviados</p>";
+        $html .= "<p>Despachados</p>";
         $html .= "</div>";
         $html .= "</div>";
         $html .= "</a>";

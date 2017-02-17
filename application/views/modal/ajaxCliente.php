@@ -16,7 +16,7 @@
     <script type="text/javascript">
     $(function() {
         $("#course").autocomplete({
-                source: "index.php/Cliente/autoComplete",
+                source: "<?=base_url()?>index.php/Cliente/autoComplete",
                 width: 260,
                 matchContains: true,
                 selectFirst: false

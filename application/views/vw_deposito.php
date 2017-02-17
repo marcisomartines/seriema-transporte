@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="list" class="row"><!-- /#list -->
 
         <div class="table-responsive col-md-12">
-            <a href="#" class="btn btn-primary pull-right"><i class="fa fa-plus-circle"></i> Novo Volume </a>
+            <a href="#"  data-toggle="modal" data-target="#inserirModal-modal" class="btn btn-primary pull-right" ><i class="fa fa-plus-circle"></i> Novo Volume </a>
             <table class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead>
                 <tr>
