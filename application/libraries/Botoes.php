@@ -43,7 +43,7 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-        $html .= " <a href=\"#\" class=\"btn btn-primary\">";
+        $html .= " <a href='".base_url()."index.php/Volume/enviados' class=\"btn btn-primary\">";
         $html .= " <div class=\"row\">";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<i class=\"fa fa-arrow-up fa-5x\"></i>";
