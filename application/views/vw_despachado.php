@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </thead>
 
                 <tbody>
-                <?=$this->mercadoria->listarDeposito();?>
+                <?=$this->mercadoria->listarEnvios();?>
                 </tbody>
             </table>
 
