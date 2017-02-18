@@ -24,10 +24,32 @@ class Botoes
         $html .= " <a href=\"#\" class=\"btn btn-primary\">";
         $html .= " <div class=\"row\">";
         $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<i class=\"fa fa-file-text-o fa-5x\"></i>";
+        $html .= "<i class=\"fa fa-line-chart fa-5x\"></i>";
         $html .= "</div>";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<p>Relatorios</p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        $html .= "</a>";
+
+        $html .= " <a href=\"#\" class=\"btn btn-primary\">";
+        $html .= " <div class=\"row\">";
+        $html .= "<div class=\"col-xs-12 text-center\">";
+        $html .= "<i class=\"fa fa-eye fa-5x\"></i>";
+        $html .= "</div>";
+        $html .= "<div class=\"col-xs-12 text-center\">";
+        $html .= "<p>Localizar Volume</p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        $html .= "</a>";
+
+        $html .= " <a href=\"#\" data-toggle=\"modal\" data-target=\"#buscarModal-modal\" class=\"btn btn-primary\">";
+        $html .= " <div class=\"row\">";
+        $html .= "<div class=\"col-xs-12 text-center\">";
+        $html .= "<i class=\"fa fa-check-circle fa-5x\"></i>";
+        $html .= "</div>";
+        $html .= "<div class=\"col-xs-12 text-center\">";
+        $html .= "<p>Entregues</p>";
         $html .= "</div>";
         $html .= "</div>";
         $html .= "</a>";
@@ -50,28 +72,6 @@ class Botoes
         $html .= "</div>";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<p>Despachados</p>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "</a>";
-
-        $html .= " <a href=\"#\" class=\"btn btn-primary\">";
-        $html .= " <div class=\"row\">";
-        $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<i class=\"fa fa-eye fa-5x\"></i>";
-        $html .= "</div>";
-        $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<p>Ver Todos</p>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "</a>";
-
-        $html .= " <a href=\"#\" data-toggle=\"modal\" data-target=\"#buscarModal-modal\" class=\"btn btn-primary\">";
-        $html .= " <div class=\"row\">";
-        $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<i class=\"fa fa-search fa-5x\"></i>";
-        $html .= "</div>";
-        $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<p>Buscar Volume</p>";
         $html .= "</div>";
         $html .= "</div>";
         $html .= "</a>";
