@@ -23,6 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?=base_url()?>js/bootstrap-datepicker.js"></script>
 </head>
 <body>
+<script>
+    $('.datepicker').datepicker();
+</script>
 <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -84,15 +87,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </table>
         </div>
     </div> <!-- /#list -->
-    <script>
-        $('.datepicker').datepicker();
-    </script>
-    <div class="input-group date" data-provide="datepicker">
-        <input type="text" class="form-control">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
-        </div>
-    </div>
 </div>
 
 <?php
