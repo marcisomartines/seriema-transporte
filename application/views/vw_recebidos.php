@@ -2,9 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: marciso
- * Date: 16/02/2017
- * Time: 22:47
+ * Date: 17/02/2017
+ * Time: 21:32
  */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
@@ -48,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </nav>
 
 <div id="main" class="container-fluid">
-    <h4 class="pull-left" style="margin-top: 55px;" >Enviados - Listagem </h4>
+    <h4 class="pull-left" style="margin-top: 55px;" >Recebidos - Listagem </h4>
 
     <div id="list" class="row"><!-- /#list -->
 
@@ -68,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </thead>
 
                 <tbody>
-                <?=$this->mercadoria->listarEnvios();?>
+                <?=$this->mercadoria->listarRecebidos();?>
                 </tbody>
             </table>
 
