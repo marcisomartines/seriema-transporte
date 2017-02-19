@@ -27,6 +27,9 @@ class Mercadoria
             $html .= "<td>".$res['tp_volume']."</td>";
             $html .= "<td>".$res['tm_volume']."</td>";
             $html .= "<td>".$res['dt_deposito']."</td>";
+            $html .= "<td>".$res['dt_envio']."</td>";
+            $html .= "<td>".$res['dt_recebido']."</td>";
+            $html .= "<td>".$res['dt_entregue']."</td>";
             $html .= "<td>".$res['status']."</td>";
             $html .= "<td class='actions'>";
             $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharModal-modal' onclick='$(\"#id_mercadoria\").val(".$res["id_mercadoria"].");'><i class='fa fa-reply-all'></i> Enviar</a>";
@@ -51,11 +54,14 @@ class Mercadoria
             $html .= "<td>".$res['tp_volume']."</td>";
             $html .= "<td>".$res['tm_volume']."</td>";
             $html .= "<td>".$res['dt_deposito']."</td>";
+            $html .= "<td>".$res['dt_envio']."</td>";
+            $html .= "<td>".$res['dt_recebido']."</td>";
+            $html .= "<td>".$res['dt_entregue']."</td>";
             $html .= "<td>".$res['status']."</td>";
             $html .= "<td class='actions'>";
-            $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharModal-modal' onclick='despachar(".$res["id_mercadoria"].");'><i class='fa fa-arrow-down'></i> Receber</a>";
-            $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal' onclick='editarVolume(".$res["id_mercadoria"].");'><i class='fa fa-pencil'></i> Editar</a>";
-            $html .= "<a class='btn btn-danger btn-xs'  href='#' data-toggle='modal' data-target='#excluirModal-modal' onclick='excluirVolume(".$res["id_mercadoria"].");'><i class='fa fa-close'></i> Excluir</a>";
+            $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#receberModal-modal' onclick='$(\"#id_mercadoria_recebido\").val(".$res["id_mercadoria"].");'><i class='fa fa-arrow-down'></i> Receber</a>";
+//            $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal' onclick='editarVolume(".$res["id_mercadoria"].");'><i class='fa fa-pencil'></i> Editar</a>";
+            $html .= "<a class='btn btn-danger btn-xs'  href='#' data-toggle='modal' data-target='#excluirModal-modal' onclick='excluirVolume(".$res["id_mercadoria"].");'><i class='fa fa-close'></i> Excluir envio</a>";
             $html .= "</td>";
             $html .= "<tr>";
         }
@@ -75,10 +81,13 @@ class Mercadoria
             $html .= "<td>".$res['tp_volume']."</td>";
             $html .= "<td>".$res['tm_volume']."</td>";
             $html .= "<td>".$res['dt_deposito']."</td>";
+            $html .= "<td>".$res['dt_envio']."</td>";
+            $html .= "<td>".$res['dt_recebido']."</td>";
+            $html .= "<td>".$res['dt_entregue']."</td>";
             $html .= "<td>".$res['status']."</td>";
             $html .= "<td class='actions'>";
             $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharModal-modal' onclick='despachar(".$res["id_mercadoria"].");'><i class='fa fa-arrow-up'></i> Entregar</a>";
-            $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal' onclick='editarVolume(".$res["id_mercadoria"].");'><i class='fa fa-pencil'></i> Editar</a>";
+//            $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal' onclick='editarVolume(".$res["id_mercadoria"].");'><i class='fa fa-pencil'></i> Editar</a>";
             $html .= "<a class='btn btn-danger btn-xs'  href='#' data-toggle='modal' data-target='#excluirModal-modal' onclick='excluirVolume(".$res["id_mercadoria"].");'><i class='fa fa-close'></i> Excluir</a>";
             $html .= "</td>";
             $html .= "<tr>";

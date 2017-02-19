@@ -2,45 +2,41 @@
 /**
  * Created by PhpStorm.
  * User: marciso
- * Date: 07/02/2017
- * Time: 20:54
+ * Date: 18/02/2017
+ * Time: 21:48
  */
 ?>
 
 <!-- Modal -->
-<div class="modal fade" id="despacharModal-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-    <input type="hidden" id="tipoEnvio" value="1">
-    <input type="hidden" id="id_mercadoria" value>
+<div class="modal fade" id="receberModal-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <input type="hidden" id="tipoRecebido" value="1">
+    <input type="hidden" id="id_mercadoria_recebido">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="modalLabel">Enviar Volume</h4>
+                <h4 class="modal-title" id="modalLabel">Receber Volume</h4>
             </div>
 
-            <div class="alert alert-success alert-dismissible" role="alert" style="display: none;" id="envioSucesso">
+            <div class="alert alert-success alert-dismissible" role="alert" style="display: none;" id="recebidoSucesso">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <strong><i class="fa fa-check"></i> Volume enviado com sucesso!</strong>
             </div>
 
-            <div class="alert alert-danger alert-dismissible" role="alert" style="display: none;" id="envioErro">
+            <div class="alert alert-danger alert-dismissible" role="alert" style="display: none;" id="recebidoErro">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <strong><i class="fa fa-close"></i> Erro ao enviar volume!</strong>
             </div>
 
             <div class="modal-body">
                 <div class="row">
-                    <div class="form-group col-md-4">
-                        <label for="campo1">Onibus</label>
-                        <input type="text" class="form-control" id="onibus_envio">
-                    </div>
 
                     <div class="form-group col-md-4">
-                        <label for="campo2">Data de Envio</label>
+                        <label for="campo2">Data de Recebimento</label>
                         <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
-                            <input type="text" class="form-control" id="dt_envio" name="dt_envio">
+                            <input type="text" class="form-control" id="dt_recebido" name="dt_recebido">
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
@@ -48,11 +44,15 @@
                     </div>
 
 <!--                    <div class="form-group col-md-12">-->
-<!--                        Cliente: <span id="cliente_despacho"></span>-->
+<!--                        Cliente: <span id="cliente_recebido"></span>-->
 <!--                    </div>-->
 <!---->
 <!--                    <div class="form-group col-md-12">-->
-<!--                        Nota Fiscal: <span id="nota_fiscal_despacho"></span>-->
+<!--                        Ônibus: <span id="onibus_recebido"></span>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-group col-md-12">-->
+<!--                        Nota Fiscal: <span id="nota_fiscal_recebido"></span>-->
 <!--                    </div>-->
 <!---->
 <!--                    <div class="form-group col-md-12">-->
@@ -71,8 +71,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="salvarEnvio"><i class="fa fa-check"></i> Enviar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelarEnvio"><i class="fa fa-close"></i> Cancelar</button>
+                <button type="button" class="btn btn-success" id="salvarRecebido"><i class="fa fa-check"></i> Enviar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelarRecebido"><i class="fa fa-close"></i> Cancelar</button>
             </div>
         </div>
     </div>

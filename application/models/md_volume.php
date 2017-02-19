@@ -77,6 +77,9 @@ class md_volume extends CI_Model
                                     WHEN 3 THEN 'GRANDE'
                                   END as tm_volume,
                                   DATE_FORMAT(tb_mercadoria.dt_deposito,'%d/%m/%Y') as dt_deposito,
+                                  DATE_FORMAT(tb_mercadoria.dt_envio,'%d/%m/%Y') as dt_envio,
+                                  DATE_FORMAT(tb_mercadoria.dt_recebido,'%d/%m/%Y') as dt_recebido,
+                                  DATE_FORMAT(tb_mercadoria.dt_entregue,'%d/%m/%Y') as dt_entregue,
                                   CASE tb_mercadoria.status
                                     WHEN 1 THEN 'DEPÓSITO'
                                     WHEN 2 THEN 'DESPACHADO'
@@ -106,6 +109,9 @@ class md_volume extends CI_Model
                                     WHEN 3 THEN 'GRANDE'
                                   END as tm_volume,
                                   DATE_FORMAT(tb_mercadoria.dt_deposito,'%d/%m/%Y') as dt_deposito,
+                                  DATE_FORMAT(tb_mercadoria.dt_envio,'%d/%m/%Y') as dt_envio,
+                                  DATE_FORMAT(tb_mercadoria.dt_recebido,'%d/%m/%Y') as dt_recebido,
+                                  DATE_FORMAT(tb_mercadoria.dt_entregue,'%d/%m/%Y') as dt_entregue,
                                   CASE tb_mercadoria.status
                                     WHEN 1 THEN 'DEPÓSITO'
                                     WHEN 2 THEN 'DESPACHADO'
@@ -135,6 +141,9 @@ class md_volume extends CI_Model
                                     WHEN 3 THEN 'GRANDE'
                                   END as tm_volume,
                                   DATE_FORMAT(tb_mercadoria.dt_deposito,'%d/%m/%Y') as dt_deposito,
+                                  DATE_FORMAT(tb_mercadoria.dt_envio,'%d/%m/%Y') as dt_envio,
+                                  DATE_FORMAT(tb_mercadoria.dt_recebido,'%d/%m/%Y') as dt_recebido,
+                                  DATE_FORMAT(tb_mercadoria.dt_entregue,'%d/%m/%Y') as dt_entregue,
                                   CASE tb_mercadoria.status
                                     WHEN 1 THEN 'DEPÓSITO'
                                     WHEN 2 THEN 'DESPACHADO'

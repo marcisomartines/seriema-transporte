@@ -98,12 +98,45 @@ $('#salvarEnvio').click(function(){
     }
 });
 
+$("#salvarRecebido").click(function(){
+    if($("#tipoRecebido").val()==1) {
+        var dados = {
+            id_mercadoria   : $("#id_mercadoria_recebido").val(),
+            dt_recebido     : $("#dt_recebido").val()
+        };
+
+        $.ajax({
+            url: "cadastrarRecebido",
+            type:"POST",
+            data:dados,
+            success: function(data){
+                limparEnvioModel();
+                $('#envioSucesso').show();
+
+                setTimeout(function(){
+                    $('#receberModal-modal').modal('toggle');
+                    $("#recebidoSucesso").hide();
+                },800);
+            },
+            error: function(data){
+                $('#recebidoErro').show();
+            }
+        });
+    }else{//editando
+
+    }
+});
+
 $("#cancelarVolume").click(function(){
     limpaVolumeModel();
 });
 
 $("#cancelarEnvio").click(function(){
     limparEnvioModel();
+});
+
+$("#cancelarRecebido").click(function(){
+    limparRecebidoModel();
 });
 
 function limpaVolumeModel(){
@@ -145,4 +178,8 @@ function limparEnvioModel(){
     $('#tm_volume_despacho').val('');
     $("#envioSucesso").hide();
     $("#envioErro").hide();
+}s
+
+function limparRecebidoModel(){
+    $('#dt_recebido').val('');
 }
