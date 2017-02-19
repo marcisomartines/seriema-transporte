@@ -28,6 +28,16 @@ class Volume extends CI_Controller
         $this->md_volume->salvarVolume();
     }
 
+    public function cadastrarEnvio(){
+        $this->load->model('md_volume');
+        $this->md_volume->salvarEnvio();
+    }
+
+    public function cadastrarRecebido(){
+        $this->load->model('md_volume');
+        $this->md_volume->salvarRecebido();
+    }
+
     public function enviados(){
         $this->load->library('Mercadoria');
         $this->load->view('vw_despachado');

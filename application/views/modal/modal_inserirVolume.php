@@ -56,6 +56,15 @@
                         </span>
 
                     </div>
+                    <div class="form-group col-md-4">
+                        <label for="campo2">Entrada no Estoque</label>
+                        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                            <input type="text" class="form-control" id="dt_deposito" name="dt_deposito">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group col-md-12">
                         <label for="campo3">Descrição</label>

@@ -10,17 +10,37 @@ class md_volume extends CI_Model
 {
 
     public function salvarVolume(){
+
         $dados = [
             'id_cliente'     => $this->input->post('cliente'),
             'nr_nota_fiscal' => $this->input->post('notafiscal'),
             'descricao'      => strtoupper($this->input->post('desc')),
             'tp_volume'      => $this->input->post('tipoVolume'),
             'tm_volume'      => $this->input->post('tamanhoVolume'),
-            'dt_deposito'    => date('Y-m-d'),
+            'dt_deposito'    => implode('-',array_reverse(explode('/',$this->input->post('dt_deposito')))),
             'status'         => 1
         ];
 
         $this->db->insert('tb_mercadoria',$dados);
+    }
+
+    public function salvarEnvio(){
+        $dados = [
+            'dt_envio' => implode('-',array_reverse(explode('/',$this->input->post('dt_envio')))),
+            'veiculo'  => $this->input->post('veiculo'),
+            'status'   => 2
+        ];
+
+        $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
+    }
+
+    public function salvarRecebido(){
+        $dados = [
+            'dt_recebido' => implode('-',array_reverse(explode('/',$this->input->post('dt_recebido')))),
+            'status'      => 3
+        ];
+
+        $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
     }
 
     public function editarVolume(){

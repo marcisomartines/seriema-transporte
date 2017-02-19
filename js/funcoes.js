@@ -32,13 +32,14 @@ $('#course').change(function(){
 
 
 $("#salvarVolume").click(function(){
-    console.log($("#tipoVolume").val());
+
     if($("#tipoVolume").val()==1) {
         var dados = {
             cliente: $('#cliente').val(),
             telefone: $('#telefone').val(),
             notafiscal: $('#notaFiscal').val(),
             desc: $('#desc').val(),
+            dt_deposito: $('#dt_deposito').val(),
             tipoVolume: $('input:radio[name=tipoVolume]:checked').val(),
             tamanhoVolume: $('input:radio[name=tamanhoVolume]:checked').val()
         };
@@ -66,8 +67,43 @@ $("#salvarVolume").click(function(){
 
 });
 
+$('#salvarEnvio').click(function(){
+    if($("#tipoVolume").val()==1) {
+        var dados ={
+            id_mercadoria   : $('#id_mercadoria').val(),
+            veiculo         : $('#onibus_envio').val(),
+            dt_envio        : $('#dt_envio').val()
+        };
+
+        $.ajax({
+            url: 'cadastrarEnvio',
+            type: 'POST',
+            data: dados,
+            success : function(data){
+                limparEnvioModel();
+                $('#envioSucesso').show();
+
+                setTimeout(function(){
+                    $('#despacharModal-modal').modal('toggle');
+                    $("#envioSucesso").hide();
+                },800);
+            },
+            error: function(data){
+                $('#envioErro').show();
+            }
+        });
+
+    }else{//Editando
+
+    }
+});
+
 $("#cancelarVolume").click(function(){
     limpaVolumeModel();
+});
+
+$("#cancelarEnvio").click(function(){
+    limparEnvioModel();
 });
 
 function limpaVolumeModel(){
@@ -76,23 +112,11 @@ function limpaVolumeModel(){
     $('#telefone').val('');
     $('#notaFiscal').val('S/N');
     $('#desc').val('');
+    $('#dt_deposito').val('');
     $('#tipoVolume1').prop('checked',true);
     $('#tamanhoVolume1').prop('checked',true);
     $("#volumeSucesso").hide();
     $("#volumeErro").hide();
-}
-
-function limparDespachoModel(){
-    $('#onibus_despacho').val();
-    $('#dt_despacho').val();
-    $('#cliente_despacho').val();
-    $('#nota_fiscal_despacho').val();
-    $('#dt_entrada_despacho').val();
-    $('#descricao_despacho').val();
-    $('#tp_volume_despacho').val();
-    $('#tm_volume_despacho').val();
-    $("#despachoSucesso").hide();
-    $("#despachoErro").hide();
 }
 
 function limparBuscaModel(){
@@ -108,4 +132,17 @@ function limparBuscaModel(){
     $('#tm_volume1_busca').prop('checked',false);
     $('#tm_volume2_busca').prop('checked',false);
     $('#tm_volume3_busca').prop('checked',false);
+}
+
+function limparEnvioModel(){
+    $('#onibus_envio').val('');
+    $('#dt_envio').val('');
+    $('#cliente_despacho').val('');
+    $('#nota_fiscal_despacho').val('');
+    $('#dt_entrada_despacho').val('');
+    $('#descricao_despacho').val('');
+    $('#tp_volume_despacho').val('');
+    $('#tm_volume_despacho').val('');
+    $("#envioSucesso").hide();
+    $("#envioErro").hide();
 }
