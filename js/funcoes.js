@@ -177,6 +177,11 @@ $("#cancelarEntregue").click(function(){
     limparEntregueModel();
 });
 
+$("#excluir").click(function(){
+    console.log($("#tipoExclusao").val());
+    console.log($("#id_mercadoria_excluir").val());
+});
+
 function limpaVolumeModel(){
     $('#cliente').val('');
     $('#course').val('');
