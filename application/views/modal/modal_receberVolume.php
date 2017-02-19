@@ -22,12 +22,12 @@
 
             <div class="alert alert-success alert-dismissible" role="alert" style="display: none;" id="recebidoSucesso">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong><i class="fa fa-check"></i> Volume enviado com sucesso!</strong>
+                <strong><i class="fa fa-check"></i> Volume recebido com sucesso!</strong>
             </div>
 
             <div class="alert alert-danger alert-dismissible" role="alert" style="display: none;" id="recebidoErro">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong><i class="fa fa-close"></i> Erro ao enviar volume!</strong>
+                <strong><i class="fa fa-close"></i> Erro ao receber volume!</strong>
             </div>
 
             <div class="modal-body">

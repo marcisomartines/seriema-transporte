@@ -16,7 +16,7 @@ $('#nota').click(function(){
 $('#course').change(function(){
 
     $.ajax({
-        url: 'index.php/Cliente/buscaCliente',
+        url: '../../index.php/Cliente/buscaCliente',
         type: 'POST',
         data:{
             nome: $('#course').val()
@@ -45,7 +45,8 @@ $("#salvarVolume").click(function(){
         };
 
         $.ajax({
-            url: 'index.php/Volume/cadastrarVolume',
+            url: 'cadastrarVolume',
+            // url: 'index.php/Volume/cadastrarVolume',
             type: 'POST',
             data: dados,
             success: function (data) {
@@ -56,6 +57,7 @@ $("#salvarVolume").click(function(){
                     $('#inserirModal-modal').modal('toggle');
                     $("#volumeSucesso").hide();
                 }, 800);
+                window.location.reload();
             },
             error: function (data) {
                 $("#volumeErro").show();
@@ -87,6 +89,7 @@ $('#salvarEnvio').click(function(){
                     $('#despacharModal-modal').modal('toggle');
                     $("#envioSucesso").hide();
                 },800);
+                window.location.reload();
             },
             error: function(data){
                 $('#envioErro').show();
@@ -111,12 +114,13 @@ $("#salvarRecebido").click(function(){
             data:dados,
             success: function(data){
                 limparRecebidoModel();
-                $('#envioSucesso').show();
+                $('#recebidoSucesso').show();
 
                 setTimeout(function(){
                     $('#receberModal-modal').modal('toggle');
                     $("#recebidoSucesso").hide();
                 },800);
+                window.location.reload();
             },
             error: function(data){
                 $('#recebidoErro').show();
@@ -146,6 +150,7 @@ $("#salvarEntregue").click(function(){
                     $('#entregarModal-modal').modal('toggle');
                     $("#entregueSucesso").hide();
                 },800);
+                window.location.reload();
             },
             error: function(data){
                 $("#entregueErro").show();
@@ -211,7 +216,7 @@ function limparEnvioModel(){
     $('#tm_volume_despacho').val('');
     $("#envioSucesso").hide();
     $("#envioErro").hide();
-}s
+}
 
 function limparRecebidoModel(){
     $('#dt_recebido').val('');

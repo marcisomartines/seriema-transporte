@@ -57,7 +57,7 @@
 
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="campo2">Entrada no Estoque</label>
+                        <label for="campo2">Entrada no Deposito</label>
                         <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             <input type="text" class="form-control" id="dt_deposito" name="dt_deposito">
                             <div class="input-group-addon">
