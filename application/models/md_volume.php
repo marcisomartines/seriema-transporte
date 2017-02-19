@@ -43,6 +43,15 @@ class md_volume extends CI_Model
         $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
     }
 
+    public function salvarEntregue(){
+        $dados = [
+            'dt_entregue' => implode('-',array_reverse(explode('/',$this->input->post('dt_entregue')))),
+            'status'      => 4
+        ];
+
+        $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
+    }
+
     public function editarVolume(){
 
         $query = $this->db->query("SELECT id_clients FROM tb_clients WHERE nome='".$this->input->post('course')."' ORDER BY nome LIMIT 0,15");

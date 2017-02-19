@@ -110,7 +110,7 @@ $("#salvarRecebido").click(function(){
             type:"POST",
             data:dados,
             success: function(data){
-                limparEnvioModel();
+                limparRecebidoModel();
                 $('#envioSucesso').show();
 
                 setTimeout(function(){
@@ -120,6 +120,35 @@ $("#salvarRecebido").click(function(){
             },
             error: function(data){
                 $('#recebidoErro').show();
+            }
+        });
+    }else{//editando
+
+    }
+});
+
+$("#salvarEntregue").click(function(){
+    if($("#tipoEntregue").val()==1){
+        var dados = {
+            id_mercadoria : $("#id_mercadoria_entregue").val(),
+            dt_entregue : $("#dt_entregue").val()
+        };
+
+        $.ajax({
+            url :"cadastrarEntregue",
+            type: "POST",
+            data: dados,
+            success: function(data){
+                limparEntregueModel();
+                $('#entregueSucesso').show();
+
+                setTimeout(function(){
+                    $('#entregarModal-modal').modal('toggle');
+                    $("#entregueSucesso").hide();
+                },800);
+            },
+            error: function(data){
+                $("#entregueErro").show();
             }
         });
     }else{//editando
@@ -137,6 +166,10 @@ $("#cancelarEnvio").click(function(){
 
 $("#cancelarRecebido").click(function(){
     limparRecebidoModel();
+});
+
+$("#cancelarEntregue").click(function(){
+    limparEntregueModel();
 });
 
 function limpaVolumeModel(){
@@ -182,4 +215,8 @@ function limparEnvioModel(){
 
 function limparRecebidoModel(){
     $('#dt_recebido').val('');
+}
+
+function limparEntregueModel(){
+    $("#dt_entregue").val();
 }

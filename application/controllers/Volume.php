@@ -38,6 +38,11 @@ class Volume extends CI_Controller
         $this->md_volume->salvarRecebido();
     }
 
+    public function cadastrarEntregue(){
+        $this->load->model('md_volume');
+        $this->md_volume->salvarEntregue();
+    }
+
     public function enviados(){
         $this->load->library('Mercadoria');
         $this->load->view('vw_despachado');
@@ -46,5 +51,10 @@ class Volume extends CI_Controller
     public function recebidos(){
         $this->load->library('Mercadoria');
         $this->load->view('vw_recebidos');
+    }
+
+    public function entregues(){
+        $this->load->library('Mercadoria');
+        $this->load->view('vw_entregue');
     }
 }

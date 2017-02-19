@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div> <!-- /#list -->
 </div>
 <?php
-include 'modal/modal_despacharVolume.php';
+include 'modal/modal_entregarVolume.php';
 include 'modal/modal_excluirVolume.php';
 include 'modal/modal_inserirVolume.php';
 include 'modal/modal_buscarVolume.php';
