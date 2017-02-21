@@ -20,8 +20,8 @@
                 Deseja realmente excluir?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="excluir">Sim</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+                <button type="button" class="btn btn-success" id="excluir"><i class="fa fa-check"></i> Excluir</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
             </div>
         </div>
     </div>

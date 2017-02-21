@@ -23,6 +23,21 @@ class Volume extends CI_Controller
         $this->load->view('vw_deposito');
     }
 
+    public function enviados(){
+        $this->load->library('Mercadoria');
+        $this->load->view('vw_despachado');
+    }
+
+    public function recebidos(){
+        $this->load->library('Mercadoria');
+        $this->load->view('vw_recebidos');
+    }
+
+    public function entregues(){
+        $this->load->library('Mercadoria');
+        $this->load->view('vw_entregue');
+    }
+
     public function cadastrarVolume(){
         $this->load->model('md_volume');
         $this->md_volume->salvarVolume();
@@ -43,18 +58,23 @@ class Volume extends CI_Controller
         $this->md_volume->salvarEntregue();
     }
 
-    public function enviados(){
-        $this->load->library('Mercadoria');
-        $this->load->view('vw_despachado');
+    public function cancelarVolume(){
+        $this->load->model('md_volume');
+        $this->md_volume->cancelarVolume();
     }
 
-    public function recebidos(){
-        $this->load->library('Mercadoria');
-        $this->load->view('vw_recebidos');
+    public function cancelarEnvio(){
+        $this->load->model('md_volume');
+        $this->md_volume->cancelarEnvio();
     }
 
-    public function entregues(){
-        $this->load->library('Mercadoria');
-        $this->load->view('vw_entregue');
+    public function cancelarRecebido(){
+        $this->load->model('md_volume');
+        $this->md_volume->cancelarRecebido();
+    }
+
+    public function cancelarEntregue(){
+        $this->load->model('md_volume');
+        $this->md_volume->cancelarEntregue();
     }
 }

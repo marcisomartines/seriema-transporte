@@ -178,7 +178,16 @@ $("#cancelarEntregue").click(function(){
 });
 
 $("#excluir").click(function(){
-    console.log($("#tipoExclusao").val());
+    if($("#tipoExclusao").val()==1){//Deposito
+
+    }else if($("#tipoExclusao").val()==2){//Envio
+
+    }else if($("#tipoExclusao").val()==3){//Recebido
+
+    }else if($("#tipoExclusao").val()==4){//Entregue
+
+    }
+
     console.log($("#id_mercadoria_excluir").val());
 });
 
