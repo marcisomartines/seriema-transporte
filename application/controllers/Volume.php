@@ -20,6 +20,7 @@ class Volume extends CI_Controller
 //        $dados = array("volume" => $volume);
 //        $this->load->view('vw_volume',$dados);
         $this->load->library('Mercadoria');
+        $this->load->library('Destino');
         $this->load->view('vw_deposito');
     }
 

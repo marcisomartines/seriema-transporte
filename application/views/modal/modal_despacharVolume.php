@@ -32,7 +32,7 @@
 
             <div class="modal-body">
                 <div class="row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="campo1">Onibus</label>
                         <input type="text" class="form-control" id="onibus_envio">
                     </div>
@@ -47,27 +47,12 @@
                         </div>
                     </div>
 
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Cliente: <span id="cliente_despacho"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Nota Fiscal: <span id="nota_fiscal_despacho"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Data de entrada: <span id="dt_entrada_despacho"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Descrição: <span id="descricao_despacho"></span>-->
-<!--                    </div>-->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Tipo do Volume: <span id="tp_volume_despacho"></span>-->
-<!--                    </div>-->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Tamanho do Volume: <span id="tm_volume_despacho"></span>-->
-<!--                    </div>-->
+                    <div class="form-group col-md-5">
+                        <label for="campo2">Destino</label>
+                        <?php
+                        echo form_dropdown('destino',$this->destino->retornaDestino(),'','class=form-control');
+                        ?>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
