@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="<?=base_url()?>/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="http://malsup.github.io/jquery.blockUI.js"></script>
 </head>
 <body>
 <script>
@@ -50,8 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </nav>
-
+<br>
+<br>
+<br>
 <div id="main" class="container-fluid">
+    <!-- /#top -->
+    <?=$this->botoes->gerar();?>
+    <!-- /#top -->
     <h4 class="pull-left" style="margin-top: 55px;" >Deposito - Listagem </h4>
 
     <div id="list" class="row"><!-- /#list -->

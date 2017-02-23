@@ -21,6 +21,14 @@ $('#course').change(function(){
         data:{
             nome: $('#course').val()
         },
+        beforeSend : function() {
+            $.blockUI({
+                message: 'Procurando informações do cliente',
+                baseZ: 2000 });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
         success : function (data) {
             var array = JSON.parse("[" + data + "]");
 
@@ -49,6 +57,14 @@ $("#salvarVolume").click(function(){
             // url: 'index.php/Volume/cadastrarVolume',
             type: 'POST',
             data: dados,
+            beforeSend : function() {
+                $.blockUI({
+                    message: 'Salvando...',
+                    baseZ: 2000 });
+            },
+            complete: function () {
+                $.unblockUI();
+            },
             success: function (data) {
                 limpaVolumeModel();
                 $("#volumeSucesso").show();
@@ -61,6 +77,7 @@ $("#salvarVolume").click(function(){
             },
             error: function (data) {
                 $("#volumeErro").show();
+                $.unblockUI();
             }
         });
     }else{//Editando

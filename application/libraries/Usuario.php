@@ -16,7 +16,7 @@ class Usuario
     }
 
     public function retornaCidadeUsuarioLogado(){
-        return 1;
+        return 6;//SAO PAULO - BRAS 2
     }
 
 }

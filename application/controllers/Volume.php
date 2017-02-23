@@ -21,6 +21,8 @@ class Volume extends CI_Controller
 //        $this->load->view('vw_volume',$dados);
         $this->load->library('Mercadoria');
         $this->load->library('Destino');
+        $this->load->library('Usuario');
+        $this->load->library('Botoes');
         $this->load->view('vw_deposito');
     }
 
