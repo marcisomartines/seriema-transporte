@@ -230,17 +230,50 @@ $("#cancelarEntregue").click(function(){
 });
 
 $("#excluir").click(function(){
+    var controller;
+
     if($("#tipoExclusao").val()==1){//Deposito
-
+        controller = 'cancelarVolume';
     }else if($("#tipoExclusao").val()==2){//Envio
-
+        controller = 'cancelarEnvio';
     }else if($("#tipoExclusao").val()==3){//Recebido
-
+        controller = 'cancelarRecebido';
     }else if($("#tipoExclusao").val()==4){//Entregue
-
+        controller = 'cancelarEntregue';
     }
 
-    console.log($("#id_mercadoria_excluir").val());
+    var dados = {
+        id_mercadoria : $('#id_mercadoria_excluir').val()
+    };
+
+    $.ajax({
+        url: controller,
+        type: 'POST',
+        data: dados,
+        beforeSend:function (){
+            $.unblockUI({
+                message: 'Excluindo...',
+                baseZ: 2000
+            });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
+        success: function(data){
+            limparExcluirModel();
+            $('#excluidoSucesso').show();
+
+            setTimeout(function(){
+                $('#entregarModal-modal').modal('toggle');
+                $("#excluidoSucesso").hide();
+            },800);
+            window.location.reload();
+        },
+        error: function(data){
+            $("#excluidoErro").show();
+            $.unblockUI();
+        }
+    });
 });
 
 function limpaVolumeModel(){
@@ -289,5 +322,9 @@ function limparRecebidoModel(){
 }
 
 function limparEntregueModel(){
-    $("#dt_entregue").val();
+    $("#dt_entregue").val('');
+}
+
+function limparExcluirModel(){
+    $('#id_mercadoria_excluir').val('');
 }

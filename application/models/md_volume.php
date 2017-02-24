@@ -67,7 +67,38 @@ class md_volume extends CI_Model
             'tm_volume'      => $this->input->post('tamanhoVolume')
         ];
 
-        $this->db->update('tb_mercadoria',$dados);
+        $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
+    }
+
+
+    public function cancelarVolume(){
+        $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->delete('tb_mercadoria');
+    }
+
+    public function cancelarEnvio(){
+        $dados = [
+            'dt_envio' => 'NULL',
+            'status' => 1
+        ];
+
+        $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
+    }
+
+    public function cancelarRecebido(){
+        $dados = [
+            'dt_recebido' => NULL,
+            'status' => 2
+        ];
+
+        $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
+    }
+
+    public function cancelarEntregue(){
+        $dados = [
+            'dt_entregue' => NULL,
+            'status' => 3
+        ];
+
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
     }
 
