@@ -28,6 +28,8 @@ class md_volume extends CI_Model
         $dados = [
             'dt_envio' => implode('-',array_reverse(explode('/',$this->input->post('dt_envio')))),
             'veiculo'  => $this->input->post('veiculo'),
+            'origem'   => $this->input->post('origem'),
+            'destino'  => $this->input->post('destino'),
             'status'   => 2
         ];
 

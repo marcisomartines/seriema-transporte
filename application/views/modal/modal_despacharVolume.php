@@ -48,6 +48,13 @@
                     </div>
 
                     <div class="form-group col-md-5">
+                        <label for="campo2">Origem</label>
+                        <?php
+                        echo form_dropdown('origem',$this->destino->retornaDestino(),$this->usuario->retornaCidadeUsuarioLogado(),'class=form-control');
+                        ?>
+                    </div>
+
+                    <div class="form-group col-md-5">
                         <label for="campo2">Destino</label>
                         <?php
                         echo form_dropdown('destino',$this->destino->retornaDestino(),$this->usuario->retornaCidadeUsuarioLogado(),'class=form-control');

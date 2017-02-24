@@ -92,9 +92,11 @@ $("#salvarVolume").click(function(){
 $('#salvarEnvio').click(function(){
     if($("#tipoVolume").val()==1) {
         var dados ={
-            id_mercadoria   : $('#id_mercadoria').val(),
-            veiculo         : $('#onibus_envio').val(),
-            dt_envio        : $('#dt_envio').val()
+            id_mercadoria : $('#id_mercadoria').val(),
+            veiculo       : $('#onibus_envio').val(),
+            dt_envio      : $('#dt_envio').val(),
+            destino       : $('#destino').val(),
+            origem        : $('#origem').val()
         };
 
         $.ajax({
