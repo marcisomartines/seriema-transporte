@@ -27,16 +27,19 @@ class Volume extends CI_Controller
     }
 
     public function enviados(){
+        $this->load->library('Botoes');
         $this->load->library('Mercadoria');
         $this->load->view('vw_despachado');
     }
 
     public function recebidos(){
+        $this->load->library('Botoes');
         $this->load->library('Mercadoria');
         $this->load->view('vw_recebidos');
     }
 
     public function entregues(){
+        $this->load->library('Botoes');
         $this->load->library('Mercadoria');
         $this->load->view('vw_entregue');
     }

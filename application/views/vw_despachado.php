@@ -50,7 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </nav>
-
+<br>
+<br>
+<br>
 <div id="main" class="container-fluid">
     <div class="row" style="margin-bottom: 10px;">
         <?=$this->botoes->gerar();?>
