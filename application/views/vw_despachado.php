@@ -52,35 +52,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </nav>
 
 <div id="main" class="container-fluid">
-    <h4 class="pull-left" style="margin-top: 55px;" >Enviados - Listagem </h4>
+    <div class="row" style="margin-bottom: 10px;">
+        <?=$this->botoes->gerar();?>
+    </div><!-- /#list -->
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><i class="fa fa-print"></i> Enviados - Lista de encomendas</div>
 
-    <div id="list" class="row"><!-- /#list -->
-
-        <div class="table-responsive col-md-12">
-            <a href="#"  data-toggle="modal" data-target="#inserirModal-modal" class="btn btn-primary pull-right" ><i class="fa fa-plus-circle"></i> Novo Volume </a>
-            <table class="table table-striped" cellspacing="0" cellpadding="0">
-                <thead>
-                <tr>
-                    <th>Cliente</th>
-                    <th>Descrição</th>
-                    <th>Tipo</th>
-                    <th>Tamanho</th>
-                    <th>Data - Deposito</th>
-                    <th>Data - Envio</th>
-                    <th>Data - Recebido</th>
-                    <th>Data - Entregue</th>
-                    <th>Situação</th>
-                    <th class="actions">Ações</th>
-                </tr>
-                </thead>
-
-                <tbody>
-                <?=$this->mercadoria->listarEnvios();?>
-                </tbody>
-            </table>
-
-        </div>
-    </div> <!-- /#list -->
+        <!-- Table -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th>Tamanho</th>
+                <th>Data - Deposito</th>
+                <th>Data - Envio</th>
+                <th>Data - Recebido</th>
+                <th>Data - Entregue</th>
+                <th>Situação</th>
+                <th class="actions">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?=$this->mercadoria->listarEnvios();?>
+            </tbody>
+        </table>
+    </div>
 </div>
 <?php
 include 'modal/modal_receberVolume.php';

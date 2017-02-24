@@ -34,6 +34,9 @@ $('#course').change(function(){
 
             $('#cliente').val(array[0][0]['id_clients']);
             $('#telefone').val(array[0][0]['telefone']);
+        },
+        error: function(data){
+            $.unblockUI();
         }
     });
 });
@@ -98,6 +101,15 @@ $('#salvarEnvio').click(function(){
             url: 'cadastrarEnvio',
             type: 'POST',
             data: dados,
+            beforeSend : function() {
+                $.blockUI({
+                    message: 'Enviando...',
+                    baseZ: 2000
+                });
+            },
+            complete: function () {
+                $.unblockUI();
+            },
             success : function(data){
                 limparEnvioModel();
                 $('#envioSucesso').show();
@@ -110,6 +122,7 @@ $('#salvarEnvio').click(function(){
             },
             error: function(data){
                 $('#envioErro').show();
+                $.unblockUI();
             }
         });
 
@@ -129,6 +142,15 @@ $("#salvarRecebido").click(function(){
             url: "cadastrarRecebido",
             type:"POST",
             data:dados,
+            beforeSend : function() {
+                $.blockUI({
+                    message: 'Recebendo...',
+                    baseZ: 2000
+                });
+            },
+            complete: function () {
+                $.unblockUI();
+            },
             success: function(data){
                 limparRecebidoModel();
                 $('#recebidoSucesso').show();
@@ -141,6 +163,7 @@ $("#salvarRecebido").click(function(){
             },
             error: function(data){
                 $('#recebidoErro').show();
+                $.unblockUI();
             }
         });
     }else{//editando
@@ -159,6 +182,15 @@ $("#salvarEntregue").click(function(){
             url :"cadastrarEntregue",
             type: "POST",
             data: dados,
+            beforeSend : function() {
+                $.blockUI({
+                    message: 'Entregando...',
+                    baseZ: 2000
+                });
+            },
+            complete: function () {
+                $.unblockUI();
+            },
             success: function(data){
                 limparEntregueModel();
                 $('#entregueSucesso').show();
@@ -171,6 +203,7 @@ $("#salvarEntregue").click(function(){
             },
             error: function(data){
                 $("#entregueErro").show();
+                $.unblockUI();
             }
         });
     }else{//editando
