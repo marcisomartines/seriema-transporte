@@ -68,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <table class="table">
             <thead>
             <tr>
+                <th>#</th>
                 <th>Cliente</th>
                 <th>Descrição</th>
                 <th>Tipo</th>

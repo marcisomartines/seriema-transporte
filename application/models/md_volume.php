@@ -78,6 +78,9 @@ class md_volume extends CI_Model
     public function cancelarEnvio(){
         $dados = [
             'dt_envio' => 'NULL',
+            'veiculo' => NULL,
+            'origem' => NULL,
+            'destino'=> NULL,
             'status' => 1
         ];
 
