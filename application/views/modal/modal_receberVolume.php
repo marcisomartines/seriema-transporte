@@ -36,38 +36,12 @@
                     <div class="form-group col-md-4">
                         <label for="campo2">Data de Recebimento</label>
                         <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
-                            <input type="text" class="form-control" id="dt_recebido" name="dt_recebido">
+                            <input type="text" class="form-control" id="dt_recebido" name="dt_recebido" value="<?=date('d/m/Y');?>">
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
                         </div>
                     </div>
-
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Cliente: <span id="cliente_recebido"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Ônibus: <span id="onibus_recebido"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Nota Fiscal: <span id="nota_fiscal_recebido"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Data de entrada: <span id="dt_entrada_despacho"></span>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Descrição: <span id="descricao_despacho"></span>-->
-<!--                    </div>-->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Tipo do Volume: <span id="tp_volume_despacho"></span>-->
-<!--                    </div>-->
-<!--                    <div class="form-group col-md-12">-->
-<!--                        Tamanho do Volume: <span id="tm_volume_despacho"></span>-->
-<!--                    </div>-->
                 </div>
             </div>
             <div class="modal-footer">

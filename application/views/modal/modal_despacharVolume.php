@@ -40,7 +40,7 @@
                     <div class="form-group col-md-4">
                         <label for="campo2">Data de Envio</label>
                         <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
-                            <input type="text" class="form-control" id="dt_envio" name="dt_envio">
+                            <input type="text" class="form-control" id="dt_envio" name="dt_envio" value="<?=date('d/m/Y');?>">
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
