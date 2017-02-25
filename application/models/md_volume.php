@@ -77,11 +77,11 @@ class md_volume extends CI_Model
 
     public function cancelarEnvio(){
         $dados = [
-            'dt_envio' => 'NULL',
-            'veiculo' => NULL,
-            'origem' => NULL,
-            'destino'=> NULL,
-            'status' => 1
+            'dt_envio'  => NULL,
+            'veiculo'   => NULL,
+            'origem'    => NULL,
+            'destino'   => NULL,
+            'status'    => 1
         ];
 
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
@@ -134,7 +134,7 @@ class md_volume extends CI_Model
                                   tb_clients.nome")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
-            ->where('status',1)->get()->result_array();
+            ->where('status',1)->order_by('dt_deposito','desc')->get()->result_array();
     }
 
     public function listarVolumeEnvio(){
@@ -166,7 +166,7 @@ class md_volume extends CI_Model
                                   tb_clients.nome")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
-            ->where('status',2)->get()->result_array();
+            ->where('status',2)->order_by('dt_envio','desc')->get()->result_array();
     }
 
     public function listarVolumeRecebido(){
@@ -198,7 +198,7 @@ class md_volume extends CI_Model
                                   tb_clients.nome")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
-            ->where('status',3)->get()->result_array();
+            ->where('status',3)->order_by('dt_recebido','desc')->get()->result_array();
     }
 
 
@@ -231,6 +231,6 @@ class md_volume extends CI_Model
                                   tb_clients.nome")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
-            ->where('status',4)->get()->result_array();
+            ->where('status',4)->order_by('dt_entregue','desc')->get()->result_array();
     }
 } 

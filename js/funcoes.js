@@ -264,7 +264,7 @@ $("#excluir").click(function(){
             $('#excluidoSucesso').show();
 
             setTimeout(function(){
-                $('#entregarModal-modal').modal('toggle');
+                $('#excluirModal-modal').modal('toggle');
                 $("#excluidoSucesso").hide();
             },800);
             window.location.reload();
