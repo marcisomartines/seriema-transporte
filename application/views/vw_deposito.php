@@ -85,9 +85,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 <?php
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
 include 'modal/modal_despacharVolume.php';
 include 'modal/modal_excluirVolume.php';
 include 'modal/modal_inserirVolume.php';

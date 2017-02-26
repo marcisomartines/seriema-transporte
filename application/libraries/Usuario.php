@@ -16,7 +16,11 @@ class Usuario
     }
 
     public function retornaCidadeUsuarioLogado(){
-        return 6;//SAO PAULO - BRAS 2
+        return $this->CI->session->userdata('cidade');
+    }
+
+    public function retornaUsuarioLogado(){
+        return $this->CI->session->userdata('id');
     }
 
 }

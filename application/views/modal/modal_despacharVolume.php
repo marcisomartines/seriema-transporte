@@ -57,7 +57,7 @@
                     <div class="form-group col-md-5">
                         <label for="campo2">Destino</label>
                         <?php
-                        echo form_dropdown('destino',$this->destino->retornaDestino(),$this->usuario->retornaCidadeUsuarioLogado(),'class=form-control');
+                        echo form_dropdown('destino',$this->destino->retornaDestino(),'','class=form-control');
                         ?>
                     </div>
                 </div>

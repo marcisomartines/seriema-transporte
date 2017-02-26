@@ -12,13 +12,14 @@ class md_volume extends CI_Model
     public function salvarVolume(){
 
         $dados = [
-            'id_cliente'     => $this->input->post('cliente'),
-            'nr_nota_fiscal' => $this->input->post('notafiscal'),
-            'descricao'      => strtoupper($this->input->post('desc')),
-            'tp_volume'      => $this->input->post('tipoVolume'),
-            'tm_volume'      => $this->input->post('tamanhoVolume'),
-            'dt_deposito'    => implode('-',array_reverse(explode('/',$this->input->post('dt_deposito')))),
-            'status'         => 1
+            'id_cliente'        => $this->input->post('cliente'),
+            'nr_nota_fiscal'    => $this->input->post('notafiscal'),
+            'descricao'         => strtoupper($this->input->post('desc')),
+            'tp_volume'         => $this->input->post('tipoVolume'),
+            'tm_volume'         => $this->input->post('tamanhoVolume'),
+            'dt_deposito'       => implode('-',array_reverse(explode('/',$this->input->post('dt_deposito')))),
+            'id_resp_deposito'  => $this->session->userdata('id'),
+            'status'            => 1
         ];
 
         $this->db->insert('tb_mercadoria',$dados);
@@ -26,13 +27,14 @@ class md_volume extends CI_Model
 
     public function editarVolume(){
         $dados = [
-            'id_cliente'     => $this->input->post('cliente'),
-            'nr_nota_fiscal' => $this->input->post('notafiscal'),
-            'descricao'      => strtoupper($this->input->post('desc')),
-            'tp_volume'      => $this->input->post('tipoVolume'),
-            'tm_volume'      => $this->input->post('tamanhoVolume'),
-            'dt_deposito'    => implode('-',array_reverse(explode('/',$this->input->post('dt_deposito')))),
-            'status'         => 1
+            'id_cliente'       => $this->input->post('cliente'),
+            'nr_nota_fiscal'   => $this->input->post('notafiscal'),
+            'descricao'        => strtoupper($this->input->post('desc')),
+            'tp_volume'        => $this->input->post('tipoVolume'),
+            'tm_volume'        => $this->input->post('tamanhoVolume'),
+            'dt_deposito'      => implode('-',array_reverse(explode('/',$this->input->post('dt_deposito')))),
+            'id_resp_deposito' => $this->session->userdata('id'),
+            'status'           => 1
         ];
 
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
@@ -40,11 +42,12 @@ class md_volume extends CI_Model
 
     public function salvarEnvio(){
         $dados = [
-            'dt_envio' => implode('-',array_reverse(explode('/',$this->input->post('dt_envio')))),
-            'veiculo'  => $this->input->post('veiculo'),
-            'origem'   => $this->input->post('origem'),
-            'destino'  => $this->input->post('destino'),
-            'status'   => 2
+            'dt_envio'      => implode('-',array_reverse(explode('/',$this->input->post('dt_envio')))),
+            'veiculo'       => $this->input->post('veiculo'),
+            'origem'        => $this->input->post('origem'),
+            'destino'       => $this->input->post('destino'),
+            'id_resp_envio' => $this->session->userdata('id'),
+            'status'        => 2
         ];
 
         $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
@@ -52,8 +55,9 @@ class md_volume extends CI_Model
 
     public function salvarRecebido(){
         $dados = [
-            'dt_recebido' => implode('-',array_reverse(explode('/',$this->input->post('dt_recebido')))),
-            'status'      => 3
+            'dt_recebido'     => implode('-',array_reverse(explode('/',$this->input->post('dt_recebido')))),
+            'id_resp_receber' => $this->session->userdata('id'),
+            'status'          => 3
         ];
 
         $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
@@ -61,8 +65,9 @@ class md_volume extends CI_Model
 
     public function salvarEntregue(){
         $dados = [
-            'dt_entregue' => implode('-',array_reverse(explode('/',$this->input->post('dt_entregue')))),
-            'status'      => 4
+            'dt_entregue'       => implode('-',array_reverse(explode('/',$this->input->post('dt_entregue')))),
+            'id_resp_entrega'   => $this->session->userdata('id'),
+            'status'            => 4
         ];
 
         $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
@@ -74,11 +79,12 @@ class md_volume extends CI_Model
 
     public function cancelarEnvio(){
         $dados = [
-            'dt_envio'  => NULL,
-            'veiculo'   => NULL,
-            'origem'    => NULL,
-            'destino'   => NULL,
-            'status'    => 1
+            'dt_envio'      => NULL,
+            'veiculo'       => NULL,
+            'origem'        => NULL,
+            'destino'       => NULL,
+            'id_resp_envio' => NULL,
+            'status'        => 1
         ];
 
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
@@ -86,8 +92,9 @@ class md_volume extends CI_Model
 
     public function cancelarRecebido(){
         $dados = [
-            'dt_recebido' => NULL,
-            'status' => 2
+            'dt_recebido'     => NULL,
+            'id_resp_receber' => NULL,
+            'status'          => 2
         ];
 
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
@@ -95,8 +102,9 @@ class md_volume extends CI_Model
 
     public function cancelarEntregue(){
         $dados = [
-            'dt_entregue' => NULL,
-            'status' => 3
+            'dt_entregue'     => NULL,
+            'id_resp_entrega' => NULL,
+            'status'          => 3
         ];
 
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);

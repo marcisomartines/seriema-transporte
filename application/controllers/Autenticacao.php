@@ -19,7 +19,6 @@ class Autenticacao extends CI_Controller
         $this->form_validation->set_rules('password', 'Senha', 'required|md5|trim');
 
         if ( $this->form_validation->run()) {
-
             redirect(base_url());
         } else {
             $this->load->view('login');
