@@ -96,8 +96,8 @@ $('#salvarEnvio').click(function(){
             id_mercadoria : $('#id_mercadoria').val(),
             veiculo       : $('#onibus_envio').val(),
             dt_envio      : $('#dt_envio').val(),
-            destino       : $('#destino').val(),
-            origem        : $('#origem').val()
+            destino       : $("[name=destino]").val(),
+            origem        : $("[name=origem]").val()
         };
 
         $.ajax({
@@ -121,7 +121,7 @@ $('#salvarEnvio').click(function(){
                     $('#despacharModal-modal').modal('toggle');
                     $("#envioSucesso").hide();
                 },800);
-                window.location.reload();
+                // window.location.reload();
             },
             error: function(data){
                 $('#envioErro').show();
