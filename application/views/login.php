@@ -30,7 +30,7 @@ $password =array('name' => 'password', 'id' => 'password', 'class' => 'form-cont
     <div class="form-group">
         <img class="col-xs-15 col-md-15 pull-center" src="<?=base_url()?>img/logo.png">
         <?php
-        echo form_open('home/login',$form);
+        echo form_open('autenticacao/login',$form);
         echo validation_errors();
 
         echo form_label('Login:','nome');
