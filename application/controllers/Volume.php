@@ -99,4 +99,8 @@ class Volume extends CI_Controller
         $this->load->model('md_volume');
         $this->md_volume->buscaEditarVolume();
     }
+
+    public function login(){
+        $this->load->view('login');
+    }
 }

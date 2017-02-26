@@ -29,7 +29,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-8">
                         <label for="campo1">Cliente</label>
 <!--                        <input type="text" class="form-control" id="cliente">-->
                         <?php
