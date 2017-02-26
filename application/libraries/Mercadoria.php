@@ -39,7 +39,7 @@ class Mercadoria
                 $html .= "<td>" . $res['status'] . "</td>";
                 $html .= "<td class='actions'>";
                 $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharModal-modal' onclick='$(\"#id_mercadoria\").val(" . $res["id_mercadoria"] . ");'><i class='fa fa-reply-all'></i> Enviar</a>";
-                $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal' onclick='editarVolume(" . $res["id_mercadoria"] . ");'><i class='fa fa-pencil'></i> Editar</a>";
+                $html .= "<a class='btn btn-warning btn-xs' href='#' data-toggle='modal' data-target='#inserirModal-modal' onclick='editarVolume(" . $res["id_mercadoria"] . ");$(\"#tipoVolume\").val(2);$(\"#id_mercadoria_editar\").val(" . $res["id_mercadoria"] . ");'><i class='fa fa-pencil'></i> Editar</a>";
                 $html .= "<a class='btn btn-danger btn-xs' id='cancelar'  href='#' data-toggle='modal' data-target='#excluirModal-modal' onclick='$(\"#id_mercadoria_excluir\").val(" . $res["id_mercadoria"] . ");$(\"#tipoExclusao\").val(1)'><i class='fa fa-close'></i> Cancelar</a>";
                 $html .= "</td>";
                 $html .= "<tr>";

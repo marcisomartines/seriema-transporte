@@ -24,6 +24,20 @@ class md_volume extends CI_Model
         $this->db->insert('tb_mercadoria',$dados);
     }
 
+    public function editarVolume(){
+        $dados = [
+            'id_cliente'     => $this->input->post('cliente'),
+            'nr_nota_fiscal' => $this->input->post('notafiscal'),
+            'descricao'      => strtoupper($this->input->post('desc')),
+            'tp_volume'      => $this->input->post('tipoVolume'),
+            'tm_volume'      => $this->input->post('tamanhoVolume'),
+            'dt_deposito'    => implode('-',array_reverse(explode('/',$this->input->post('dt_deposito')))),
+            'status'         => 1
+        ];
+
+        $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
+    }
+
     public function salvarEnvio(){
         $dados = [
             'dt_envio' => implode('-',array_reverse(explode('/',$this->input->post('dt_envio')))),
@@ -53,23 +67,6 @@ class md_volume extends CI_Model
 
         $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->update('tb_mercadoria',$dados);
     }
-
-    public function editarVolume(){
-
-        $query = $this->db->query("SELECT id_clients FROM tb_clients WHERE nome='".$this->input->post('course')."' ORDER BY nome LIMIT 0,15");
-
-
-        $dados = [
-            'id_cliente'     => $this->input->post('cliente'),
-            'nr_nota_fiscal' => $this->input->post('notafiscal'),
-            'descricao'      => $this->input->post('desc'),
-            'tp_volume'      => $this->input->post('tipoVolume'),
-            'tm_volume'      => $this->input->post('tamanhoVolume')
-        ];
-
-        $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
-    }
-
 
     public function cancelarVolume(){
         $this->db->where('id_mercadoria',$this->input->post('id_mercadoria'))->delete('tb_mercadoria');
@@ -103,6 +100,24 @@ class md_volume extends CI_Model
         ];
 
         $this->db->where('id_mercadoria', $this->input->post('id_mercadoria'))->update('tb_mercadoria', $dados);
+    }
+
+    public function buscaEditarVolume(){
+        $resultado = $this->db->select("tb_mercadoria.id_mercadoria,
+                                  tb_mercadoria.id_cliente,
+                                  tb_mercadoria.nr_nota_fiscal,
+                                  tb_mercadoria.descricao,
+                                  tb_mercadoria.tp_volume,
+                                  tb_mercadoria.tm_volume,
+                                  DATE_FORMAT(tb_mercadoria.dt_deposito,'%d/%m/%Y') as dt_deposito,
+                                  tb_mercadoria.status,
+                                  tb_clients.nome,
+                                  tb_clients.telefone")
+            ->from('tb_mercadoria')
+            ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
+            ->where('id_mercadoria',$this->input->post('id_mercadoria'))->get()->result_array();
+
+        echo json_encode($resultado);
     }
 
     public function listarVolumeDeposito(){

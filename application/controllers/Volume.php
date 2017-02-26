@@ -55,6 +55,11 @@ class Volume extends CI_Controller
         $this->md_volume->salvarVolume();
     }
 
+    public function editarVolume(){
+        $this->load->model('md_volume');
+        $this->md_volume->editarVolume();
+    }
+
     public function cadastrarEnvio(){
         $this->load->model('md_volume');
         $this->md_volume->salvarEnvio();
@@ -88,5 +93,10 @@ class Volume extends CI_Controller
     public function cancelarEntregue(){
         $this->load->model('md_volume');
         $this->md_volume->cancelarEntregue();
+    }
+
+    public function buscaEditarVolume(){
+        $this->load->model('md_volume');
+        $this->md_volume->buscaEditarVolume();
     }
 }

@@ -32,7 +32,7 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-        $html .= " <a href=\"#\" class=\"btn btn-primary\">";
+        $html .= " <a href=\"#\"  data-toggle=\"modal\" data-target=\"#buscarModal-modal\"  class=\"btn btn-primary\">";
         $html .= " <div class=\"row\">";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<i class=\"fa fa-eye fa-5x\"></i>";
@@ -43,7 +43,7 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-        $html .= " <a href='".base_url()."index.php/Volume/entregues' data-toggle=\"modal\" data-target=\"#buscarModal-modal\" class=\"btn btn-primary\">";
+        $html .= " <a href='".base_url()."index.php/Volume/entregues' class=\"btn btn-primary\">";
         $html .= " <div class=\"row\">";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<i class=\"fa fa-check-circle fa-5x\"></i>";
@@ -87,7 +87,7 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-        $html .= " <a  href=\"#\" data-toggle=\"modal\" data-target=\"#inserirModal-modal\" class=\"btn btn-primary\">";
+        $html .= " <a  href=\"#\" data-toggle=\"modal\" data-target=\"#inserirModal-modal\" onclick='$(\"#tipoVolume\").val(1);' class=\"btn btn-primary\">";
         $html .= " <div class=\"row\">";
         $html .= "<div class=\"col-xs-12 text-center\">";
         $html .= "<i class=\"fa fa-plus-circle fa-5x\"></i>";

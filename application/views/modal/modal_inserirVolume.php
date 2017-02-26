@@ -8,6 +8,7 @@
 ?>
 <div class="modal fade" id="inserirModal-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
     <input type="hidden" id="tipoVolume" value="1">
+    <input type="hidden" id="id_mercadoria_editar" value="1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

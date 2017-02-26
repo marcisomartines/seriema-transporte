@@ -42,51 +42,52 @@ $('#course').change(function(){
 });
 
 
-$("#salvarVolume").click(function(){
-
+$("#salvarVolume").click(function(){//cadastrar deposito
+    var controller;
     if($("#tipoVolume").val()==1) {
-        var dados = {
-            cliente: $('#cliente').val(),
-            telefone: $('#telefone').val(),
-            notafiscal: $('#notaFiscal').val(),
-            desc: $('#desc').val(),
-            dt_deposito: $('#dt_deposito').val(),
-            tipoVolume: $('input:radio[name=tipoVolume]:checked').val(),
-            tamanhoVolume: $('input:radio[name=tamanhoVolume]:checked').val()
-        };
-
-        $.ajax({
-            url: 'cadastrarVolume',
-            // url: 'index.php/Volume/cadastrarVolume',
-            type: 'POST',
-            data: dados,
-            beforeSend : function() {
-                $.blockUI({
-                    message: 'Salvando...',
-                    baseZ: 2000 });
-            },
-            complete: function () {
-                $.unblockUI();
-            },
-            success: function (data) {
-                limpaVolumeModel();
-                $("#volumeSucesso").show();
-
-                setTimeout(function () {
-                    $('#inserirModal-modal').modal('toggle');
-                    $("#volumeSucesso").hide();
-                }, 800);
-                window.location.reload();
-            },
-            error: function (data) {
-                $("#volumeErro").show();
-                $.unblockUI();
-            }
-        });
+        controller='cadastrarVolume';
     }else{//Editando
-
+        controller='editarVolume';
     }
 
+    var dados = {
+        id_mercadoria : $('#id_mercadoria_editar').val(),
+        cliente: $('#cliente').val(),
+        telefone: $('#telefone').val(),
+        notafiscal: $('#notaFiscal').val(),
+        desc: $('#desc').val(),
+        dt_deposito: $('#dt_deposito').val(),
+        tipoVolume: $('input:radio[name=tipoVolume]:checked').val(),
+        tamanhoVolume: $('input:radio[name=tamanhoVolume]:checked').val()
+    };
+
+    $.ajax({
+        url: controller,
+        type: 'POST',
+        data: dados,
+        beforeSend : function() {
+            $.blockUI({
+                message: 'Salvando...',
+                baseZ: 2000 });
+        },
+        complete: function () {
+            $.unblockUI();
+        },
+        success: function (data) {
+            limpaVolumeModel();
+            $("#volumeSucesso").show();
+
+            setTimeout(function () {
+                $('#inserirModal-modal').modal('toggle');
+                $("#volumeSucesso").hide();
+            }, 800);
+            window.location.reload();
+        },
+        error: function (data) {
+            $("#volumeErro").show();
+            $.unblockUI();
+        }
+    });
 });
 
 $('#salvarEnvio').click(function(){
@@ -251,7 +252,7 @@ $("#excluir").click(function(){
         type: 'POST',
         data: dados,
         beforeSend:function (){
-            $.unblockUI({
+            $.blockUI({
                 message: 'Excluindo...',
                 baseZ: 2000
             });
@@ -276,6 +277,46 @@ $("#excluir").click(function(){
     });
 });
 
+function editarVolume(id){
+    var dados = {
+        id_mercadoria : id
+    };
+    console.log(dados);
+    limpaVolumeModel();
+    $.ajax({
+        url:'buscaEditarVolume',
+        type: 'POST',
+        data: dados,
+        beforeSend: function(){
+            $.blockUI({
+                message: "Carregando...",
+                baseZ: 2000
+            });
+        },
+        complete:function(data){
+
+            var array = JSON.parse(data.responseText);
+
+            if(array[0].nr_nota_fiscal != "S/N") {
+                $('#nota').prop('checked', true);
+                $("#notaFiscal").prop('disabled',false);
+            }else{
+                $('#nota').prop('checked', false);
+                $("#notaFiscal").prop('disabled',true);
+            }
+            $('#cliente').val(array[0].id_cliente);
+            $('#course').val(array[0].nome);
+            $('#telefone').val(array[0].telefone);
+            $('#notaFiscal').val(array[0].nr_nota_fiscal);
+            $('#desc').val(array[0].descricao);
+            $('#dt_deposito').val(array[0].dt_deposito);
+            $('#tipoVolume'+array[0].tp_volume).prop('checked',true);
+            $('#tamanhoVolume'+array[0].tm_volume).prop('checked',true);
+            $.unblockUI();
+        }
+    });
+}
+
 function limpaVolumeModel(){
     $('#cliente').val('');
     $('#course').val('');
@@ -283,6 +324,7 @@ function limpaVolumeModel(){
     $('#notaFiscal').val('S/N');
     $('#desc').val('');
     $('#dt_deposito').val('');
+    $('#id_mercadoria_editar').val('');
     $('#tipoVolume1').prop('checked',true);
     $('#tamanhoVolume1').prop('checked',true);
     $("#volumeSucesso").hide();
