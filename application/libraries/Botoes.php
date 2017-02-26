@@ -103,4 +103,14 @@ class Botoes
 
         echo $html;
     }
+
+    public function menu(){
+        $html = '';
+        $html .= "<li><a href='#'>Início</a></li>";
+        $html .= "<li><a href='#'>Opções</a></li>";
+        $html .= "<li><a href='#'>Perfil</a></li>";
+        $html .= "<li><a href='".base_url()."index.php/Autenticacao/logout'>Sair</a></li>";
+
+        echo $html;
+    }
 }

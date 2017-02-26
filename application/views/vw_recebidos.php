@@ -44,10 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Opções</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Sair</a></li>
+                <?=$this->botoes->menu();?>
             </ul>
         </div>
     </div>

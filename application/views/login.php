@@ -33,7 +33,7 @@ $password =array('name' => 'password', 'id' => 'password', 'class' => 'form-cont
         echo form_open('autenticacao/login',$form);
         echo validation_errors();
 
-        echo form_label('Login:','nome');
+        echo form_label('Usuario:','nome');
         echo form_input($usuario);
         ?>
     </div>

@@ -18,13 +18,9 @@ class Autenticacao extends CI_Controller
         $this->form_validation->set_rules('nome', 'Login', 'required|trim|callback_validar_dados');
         $this->form_validation->set_rules('password', 'Senha', 'required|md5|trim');
 
-        if ($this->form_validation->run()) {
-            $usuario = array(
-                'nome' => $this->input->post('nome'),
-                'is_logged_in' => 1
-            );
-            $this->session->set_userdata($usuario);
-            redirect('/');
+        if ( $this->form_validation->run()) {
+
+            redirect(base_url());
         } else {
             $this->load->view('login');
         }
@@ -43,6 +39,6 @@ class Autenticacao extends CI_Controller
 
     public function logout() {
         $this->session->sess_destroy(); //destroi a sessão
-        redirect('home/index');
+        redirect(base_url());
     }
 }

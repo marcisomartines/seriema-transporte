@@ -12,42 +12,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Volume extends CI_Controller
 {
     public function deposito(){
-//        $this->output->enable_profiler(TRUE);
-//        $this->load->model('md_volume');
-//
-//        $volume=$this->md_volume->listaVolume();
-//
-//        $dados = array("volume" => $volume);
-//        $this->load->view('vw_volume',$dados);
-        $this->load->library('Mercadoria');
-        $this->load->library('Destino');
-        $this->load->library('Usuario');
-        $this->load->library('Botoes');
-        $this->load->view('vw_deposito');
+        if ($this->session->userdata('is_logged_in') == 1) {
+            $this->load->library('Mercadoria');
+            $this->load->library('Destino');
+            $this->load->library('Usuario');
+            $this->load->library('Botoes');
+            $this->load->view('vw_deposito');
+        }else{
+            $this->load->view('login');
+        }
     }
 
     public function enviados(){
-        $this->load->library('Destino');
-        $this->load->library('Usuario');
-        $this->load->library('Botoes');
-        $this->load->library('Mercadoria');
-        $this->load->view('vw_despachado');
+        if ($this->session->userdata('is_logged_in') == 1) {
+            $this->load->library('Destino');
+            $this->load->library('Usuario');
+            $this->load->library('Botoes');
+            $this->load->library('Mercadoria');
+            $this->load->view('vw_despachado');
+        }else{
+            $this->load->view('login');
+        }
     }
 
     public function recebidos(){
-        $this->load->library('Destino');
-        $this->load->library('Usuario');
-        $this->load->library('Botoes');
-        $this->load->library('Mercadoria');
-        $this->load->view('vw_recebidos');
+        if ($this->session->userdata('is_logged_in') == 1) {
+            $this->load->library('Destino');
+            $this->load->library('Usuario');
+            $this->load->library('Botoes');
+            $this->load->library('Mercadoria');
+            $this->load->view('vw_recebidos');
+        }else{
+            $this->load->view('login');
+        }
     }
 
     public function entregues(){
-        $this->load->library('Destino');
-        $this->load->library('Usuario');
-        $this->load->library('Botoes');
-        $this->load->library('Mercadoria');
-        $this->load->view('vw_entregue');
+        if ($this->session->userdata('is_logged_in') == 1) {
+            $this->load->library('Destino');
+            $this->load->library('Usuario');
+            $this->load->library('Botoes');
+            $this->load->library('Mercadoria');
+            $this->load->view('vw_entregue');
+        }else{
+            $this->load->view('login');
+        }
     }
 
     public function cadastrarVolume(){
@@ -98,9 +107,5 @@ class Volume extends CI_Controller
     public function buscaEditarVolume(){
         $this->load->model('md_volume');
         $this->md_volume->buscaEditarVolume();
-    }
-
-    public function login(){
-        $this->load->view('login');
     }
 }
