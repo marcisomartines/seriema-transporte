@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="salvarRecebido"><i class="fa fa-check"></i> Enviar</button>
+                <button type="button" class="btn btn-success" id="salvarRecebido"><i class="fa fa-check"></i> Receber</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelarRecebido"><i class="fa fa-close"></i> Cancelar</button>
             </div>
         </div>

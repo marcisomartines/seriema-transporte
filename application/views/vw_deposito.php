@@ -28,9 +28,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <script>
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+        orientation: 'bottom'
+    });
 </script>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -48,15 +50,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </nav>
-<br>
-<br>
-<br>
 <div id="main" class="container-fluid">
     <!-- /#top -->
     <div class="row" style="margin-bottom: 10px;">
         <?=$this->botoes->gerar();?>
     </div>
     <!-- /#top -->
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><i class="fa fa-search"></i> Filtros</div>
+
+        <!-- Table -->
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label for="campo1">Período Inicial</label>
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                    <input type="text" class="form-control" id="dt_envio" name="dt_envio" value="">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="campo1">Período Final</label>
+                <div class="input-group date" data-provide="datepicker-inline" data-date-format="dd/mm/yyyy">
+                    <input type="text" class="form-control" id="dt_envio" name="dt_envio" value="">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                <a href='#' class="btn btn-primary" style="margin-top: 26px;"><i class="fa fa-search"></i> Filtra</a>
+            </div>
+        </div>
+    </div>
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading"><i class="fa fa-print"></i> Deposito - Lista de encomendas</div>

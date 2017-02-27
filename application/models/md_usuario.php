@@ -22,6 +22,7 @@ class md_usuario extends CI_Model
                 $usuario = [
                     'id'            => $row->id_users,
                     'nome'          => $row->nome_user,
+                    'nome_comp'     => $row->nome_comp,
                     'cidade'        => $row->id_viagem,
                     'is_logged_in'  => 1
                 ];
