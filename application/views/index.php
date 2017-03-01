@@ -24,9 +24,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </head>
 <body>
-<script>
-    $('.datepicker').datepicker();
-</script>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -50,38 +47,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <br>
 <div id="main" class="container-fluid">
      <!-- /#top -->
-    <?=$this->botoes->gerar();?>
+    <?=$this->botoes->gerar(1);?>
      <!-- /#top -->
     <div id="list" class="row"><!-- /#list -->
         <div class="table-responsive col-md-12">
-            <table class="table table-striped" cellspacing="0" cellpadding="0">
-                <thead>
-                <tr>
-                    <th>Onibus</th>
-                    <th>Origem</th>
-                    <th>Destino</th>
-                    <th>Chegada - Destino</th>
-                    <th>Cliente</th>
-                    <th class="actions">Ações</th>
-                </tr>
-                </thead>
-                <tbody>
 
-                    <tr>
-                        <td>5014</td>
-                        <td>São Paulo - SP</td>
-                        <td>Campo Grande - MS</td>
-                        <td>07/02/2017</td>
-                        <td>Marciso Gonzalez Martines</td>
-                        <td class="actions">
-                            <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                            <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                            <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#excluirModal-modal">Excluir</a>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
         </div>
     </div> <!-- /#list -->
 </div>

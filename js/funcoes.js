@@ -121,7 +121,7 @@ $('#salvarEnvio').click(function(){
                     $('#despacharModal-modal').modal('toggle');
                     $("#envioSucesso").hide();
                 },800);
-                // window.location.reload();
+                window.location.reload();
             },
             error: function(data){
                 $('#envioErro').show();

@@ -83,11 +83,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 <?php
-include 'modal/modal_receberVolume.php';
 include 'modal/modal_despacharVolume.php';
 include 'modal/modal_excluirVolume.php';
 include 'modal/modal_inserirVolume.php';
-include 'modal/modal_buscarVolume.php';
+include 'modal/modal_receberVolume.php';
+include 'modal/modal_entregarVolume.php';
 ?>
 
 <script src="<?=base_url()?>js/funcoes.js"></script>

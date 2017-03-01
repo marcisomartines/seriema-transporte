@@ -15,7 +15,7 @@ class Botoes
         $this->CI =&get_instance();
     }
 
-    public function gerar(){
+    public function gerar($opcao=0){
 
         $html = "<div id=\"top\" class=\"row\" style='float: right;'>";
 
@@ -87,16 +87,19 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-        $html .= " <a  href=\"#\" data-toggle=\"modal\" data-target=\"#inserirModal-modal\" onclick='$(\"#tipoVolume\").val(1);' class=\"btn btn-primary\" style=\"width: 125px;\">";
-        $html .= " <div class=\"row\">";
-        $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<i class=\"fa fa-plus-circle fa-5x\"></i>";
-        $html .= "</div>";
-        $html .= "<div class=\"col-xs-12 text-center\">";
-        $html .= "<p>Novo Volumes</p>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "</a>";
+        if(!$opcao) {
+
+            $html .= " <a  href=\"#\" data-toggle=\"modal\" data-target=\"#inserirModal-modal\" onclick='$(\"#tipoVolume\").val(1);' class=\"btn btn-primary\" style=\"width: 125px;\">";
+            $html .= " <div class=\"row\">";
+            $html .= "<div class=\"col-xs-12 text-center\">";
+            $html .= "<i class=\"fa fa-plus-circle fa-5x\"></i>";
+            $html .= "</div>";
+            $html .= "<div class=\"col-xs-12 text-center\">";
+            $html .= "<p>Novo Volumes</p>";
+            $html .= "</div>";
+            $html .= "</div>";
+            $html .= "</a>";
+        }
 
         $html .= "</div>";
         $html .= "</div>";
