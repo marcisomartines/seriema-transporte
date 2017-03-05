@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seriema encomendas - SISTUR</title>
+    <title>SISTUR</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datepicker.min.css"  >
@@ -28,9 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <script>
-    $('.datepicker').datepicker({
-        orientation: 'bottom'
-    });
+    $('.datepicker').datepicker();
 </script>
 <nav class="navbar navbar-default navbar">
     <div class="container-fluid">
@@ -41,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Seriema Encomendas - SISTUR</a>
+            <a class="navbar-brand" href="<?=base_url()?>">SISTUR</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">

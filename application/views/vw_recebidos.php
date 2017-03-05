@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seriema encomendas - SISTUR</title>
+    <title>SISTUR</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datepicker.min.css"  >
@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script>
     $('.datepicker').datepicker();
 </script>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -49,9 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </nav>
-<br>
-<br>
-<br>
+
 <div id="main" class="container-fluid">
     <div class="row" style="margin-bottom: 10px;">
         <?=$this->botoes->gerar();?>

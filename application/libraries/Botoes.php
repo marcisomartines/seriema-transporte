@@ -110,8 +110,8 @@ class Botoes
     public function menu(){
         $html = '';
         $html .= "<li><a href='".base_url()."'>Início</a></li>";
-        $html .= "<li><a href='#'>Opções</a></li>";
-        $html .= "<li><a href='#'>Perfil</a></li>";
+//        $html .= "<li><a href='#'>Opções</a></li>";
+//        $html .= "<li><a href='#'>Perfil</a></li>";
         $html .= "<li><a href='".base_url()."index.php/Autenticacao/logout'>Sair</a></li>";
         $html .= "<li><a href='#'><i class='fa fa-user-circle'></i> ".$this->CI->session->userdata('nome_comp')." </a></li>";
 
