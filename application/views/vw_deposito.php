@@ -98,9 +98,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Tipo</th>
                 <th>Tamanho</th>
                 <th>Data - Deposito</th>
-                <th>Data - Envio</th>
-                <th>Data - Recebido</th>
-                <th>Data - Entregue</th>
                 <th>Situação</th>
                 <th class="actions">Ações</th>
             </tr>

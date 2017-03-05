@@ -186,7 +186,8 @@ class md_volume extends CI_Model
                                     WHEN 3 THEN 'RECEBIDO'
                                     WHEN 4 THEN 'ENTREGUE'
                                   END as status,
-                                  tb_clients.nome")
+                                  tb_clients.nome,
+                                  tb_mercadoria.veiculo")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
             ->where('status',2)->order_by('dt_envio','desc')->get()->result_array();

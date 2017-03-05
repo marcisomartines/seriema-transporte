@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">SISTUR</a>
+            <a class="navbar-brand" href="<?=base_url()?>">SISTUR</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?=$this->botoes->gerar(1);?>
      <!-- /#top -->
     <div id="list" class="row"><!-- /#list -->
-        <div class="table-responsive col-md-12">
+        <div class="table-responsive col-md-12" id="conteudo">
 
         </div>
     </div> <!-- /#list -->

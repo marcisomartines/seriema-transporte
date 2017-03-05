@@ -32,16 +32,16 @@ class Botoes
         $html .= "</div>";
         $html .= "</a>";
 
-//        $html .= " <a href=\"#\"  data-toggle=\"modal\" data-target=\"#buscarModal-modal\"  class=\"btn btn-primary\">";
-//        $html .= " <div class=\"row\">";
-//        $html .= "<div class=\"col-xs-12 text-center\">";
-//        $html .= "<i class=\"fa fa-eye fa-5x\"></i>";
-//        $html .= "</div>";
-//        $html .= "<div class=\"col-xs-12 text-center\">";
-//        $html .= "<p>Localizar Volume</p>";
-//        $html .= "</div>";
-//        $html .= "</div>";
-//        $html .= "</a>";
+        $html .= " <a href=\"#\" onclick='getPagina('inicio')'  data-toggle=\"modal\" data-target=\"#buscarModal-modal\"  class=\"btn btn-primary\">";
+        $html .= " <div class=\"row\">";
+        $html .= "<div class=\"col-xs-12 text-center\">";
+        $html .= "<i class=\"fa fa-eye fa-5x\"></i>";
+        $html .= "</div>";
+        $html .= "<div class=\"col-xs-12 text-center\">";
+        $html .= "<p>Localizar Volume</p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        $html .= "</a>";
 
         $html .= " <a href='".base_url()."index.php/Volume/entregues' class=\"btn btn-primary\" style=\"width: 125px;\">";
         $html .= " <div class=\"row\">";
@@ -109,11 +109,9 @@ class Botoes
 
     public function menu(){
         $html = '';
-        $html .= "<li><a href='".base_url()."'>Início</a></li>";
-//        $html .= "<li><a href='#'>Opções</a></li>";
-//        $html .= "<li><a href='#'>Perfil</a></li>";
-        $html .= "<li><a href='".base_url()."index.php/Autenticacao/logout'>Sair</a></li>";
-        $html .= "<li><a href='#'><i class='fa fa-user-circle'></i> ".$this->CI->session->userdata('nome_comp')." </a></li>";
+        $html .= "<li><a href='".base_url()."'><i class='fa fa-home'></i> Início</a></li>";
+        $html .= "<li><a href='".base_url()."index.php/Autenticacao/logout'><i class='fa fa-power-off'></i> Sair</a></li>";
+        $html .= "<li><a href='#'><i class='fa fa-user'></i> ".$this->CI->session->userdata('nome_comp')." </a></li>";
 
         echo $html;
     }

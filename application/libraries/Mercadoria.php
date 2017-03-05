@@ -33,9 +33,6 @@ class Mercadoria
                 $html .= "<td>" . $res['tp_volume'] . "</td>";
                 $html .= "<td>" . $res['tm_volume'] . "</td>";
                 $html .= "<td>" . $res['dt_deposito'] . "</td>";
-                $html .= "<td>" . $res['dt_envio'] . "</td>";
-                $html .= "<td>" . $res['dt_recebido'] . "</td>";
-                $html .= "<td>" . $res['dt_entregue'] . "</td>";
                 $html .= "<td>" . $res['status'] . "</td>";
                 $html .= "<td class='actions'>";
                 $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#despacharModal-modal' onclick='$(\"#id_mercadoria\").val(" . $res["id_mercadoria"] . ");'><i class='fa fa-reply-all'></i> Enviar</a>";
@@ -63,14 +60,13 @@ class Mercadoria
             foreach ($resultado as $res) {
                 $html .= "<tr>";
                 $html .= "<td>" . $res['id_mercadoria'] . "</td>";
+                $html .= "<td>" . $res['veiculo'] . "</td>";
                 $html .= "<td>" . $res['nome'] . "</td>";
                 $html .= "<td>" . $res['descricao'] . "</td>";
                 $html .= "<td>" . $res['tp_volume'] . "</td>";
                 $html .= "<td>" . $res['tm_volume'] . "</td>";
                 $html .= "<td>" . $res['dt_deposito'] . "</td>";
                 $html .= "<td>" . $res['dt_envio'] . "</td>";
-                $html .= "<td>" . $res['dt_recebido'] . "</td>";
-                $html .= "<td>" . $res['dt_entregue'] . "</td>";
                 $html .= "<td>" . $res['status'] . "</td>";
                 $html .= "<td class='actions'>";
                 $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#receberModal-modal' onclick='$(\"#id_mercadoria_recebido\").val(" . $res["id_mercadoria"] . ");'><i class='fa fa-arrow-down'></i> Receber</a>";
