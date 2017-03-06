@@ -219,7 +219,8 @@ class md_volume extends CI_Model
                                     WHEN 3 THEN 'RECEBIDO'
                                     WHEN 4 THEN 'ENTREGUE'
                                   END as status,
-                                  tb_clients.nome")
+                                  tb_clients.nome,
+                                  tb_mercadoria.veiculo")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
             ->where('status',3)->order_by('dt_recebido','desc')->get()->result_array();
@@ -252,7 +253,8 @@ class md_volume extends CI_Model
                                     WHEN 3 THEN 'RECEBIDO'
                                     WHEN 4 THEN 'ENTREGUE'
                                   END as status,
-                                  tb_clients.nome")
+                                  tb_clients.nome,
+                                  tb_mercadoria.veiculo")
             ->from('tb_mercadoria')
             ->join('tb_clients','tb_clients.id_clients=tb_mercadoria.id_cliente')
             ->where('status',4)->order_by('dt_entregue','desc')->get()->result_array();

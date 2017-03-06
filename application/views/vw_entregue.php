@@ -62,6 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <thead>
             <tr>
                 <th>#</th>
+                <th>Veiculo</th>
                 <th>Cliente</th>
                 <th>Descrição</th>
                 <th>Tipo</th>

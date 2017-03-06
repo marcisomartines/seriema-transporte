@@ -94,6 +94,7 @@ class Mercadoria
             foreach ($resultado as $res) {
                 $html .= "<tr>";
                 $html .= "<td>" . $res['id_mercadoria'] . "</td>";
+                $html .= "<td>" . $res['veiculo'] . "</td>";
                 $html .= "<td>" . $res['nome'] . "</td>";
                 $html .= "<td>" . $res['descricao'] . "</td>";
                 $html .= "<td>" . $res['tp_volume'] . "</td>";
@@ -101,7 +102,6 @@ class Mercadoria
                 $html .= "<td>" . $res['dt_deposito'] . "</td>";
                 $html .= "<td>" . $res['dt_envio'] . "</td>";
                 $html .= "<td>" . $res['dt_recebido'] . "</td>";
-                $html .= "<td>" . $res['dt_entregue'] . "</td>";
                 $html .= "<td>" . $res['status'] . "</td>";
                 $html .= "<td class='actions'>";
                 $html .= "<a class='btn btn-success btn-xs' href='#' data-toggle='modal' data-target='#entregarModal-modal' onclick='$(\"#id_mercadoria_entregue\").val(" . $res["id_mercadoria"] . ");'><i class='fa fa-arrow-up'></i> Entregar</a>";
@@ -129,6 +129,7 @@ class Mercadoria
             foreach ($resultado as $res) {
                 $html .= "<tr>";
                 $html .= "<td>" . $res['id_mercadoria'] . "</td>";
+                $html .= "<td>" . $res['veiculo'] . "</td>";
                 $html .= "<td>" . $res['nome'] . "</td>";
                 $html .= "<td>" . $res['descricao'] . "</td>";
                 $html .= "<td>" . $res['tp_volume'] . "</td>";

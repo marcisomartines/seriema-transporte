@@ -63,6 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <thead>
             <tr>
                 <th>#</th>
+                <th>Veiculo</th>
                 <th>Cliente</th>
                 <th>Descrição</th>
                 <th>Tipo</th>
@@ -70,7 +71,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Data - Deposito</th>
                 <th>Data - Envio</th>
                 <th>Data - Recebido</th>
-                <th>Data - Entregue</th>
                 <th>Situação</th>
                 <th class="actions">Ações</th>
             </tr>

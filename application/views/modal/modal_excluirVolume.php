@@ -29,7 +29,7 @@
                 Deseja realmente cancelar?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="excluir"><i class="fa fa-check"></i> Excluir</button>
+                <button type="button" class="btn btn-success" id="excluir"><i class="fa fa-check"></i> Confirmar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> Cancelar</button>
             </div>
         </div>

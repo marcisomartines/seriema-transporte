@@ -162,7 +162,7 @@ $("#salvarRecebido").click(function(){
                     $('#receberModal-modal').modal('toggle');
                     $("#recebidoSucesso").hide();
                 },800);
-                window.location.reload();
+                // window.location.reload();
             },
             error: function(data){
                 $('#recebidoErro').show();

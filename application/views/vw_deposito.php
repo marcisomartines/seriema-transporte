@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="form-group col-md-2">
                 <label for="campo1">Período Inicial</label>
                 <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
-                    <input type="text" class="form-control" id="dt_envio" name="dt_envio" value="">
+                    <input type="text" class="form-control" id="dt_inicio" name="dt_inicio" value="">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="form-group col-md-2">
                 <label for="campo1">Período Final</label>
                 <div class="input-group date" data-provide="datepicker-inline" data-date-format="dd/mm/yyyy">
-                    <input type="text" class="form-control" id="dt_envio" name="dt_envio" value="">
+                    <input type="text" class="form-control" id="dt_fim" name="dt_fim" value="">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
